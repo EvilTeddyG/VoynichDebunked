@@ -178,29 +178,16 @@ Important scope note: the Lean development formalizes **inferential consistency 
 The following items govern escalation from "strong hypothesis package" to stronger exclusionary claims.
 Status labels are intentionally conservative.
 
-1. Input data immutability and provenance tracking. **Status: In Force**
-  - Deterministic transcript/control provenance guardrails are active by default.
-  - Current input hashes are frozen in `artifacts/run_manifest_latest.json`.
-2. Full run provenance for reproducibility. **Status: In Force (Current Artifact Batch)**
-  - Command bundle, environment, commit SHA, and artifact hashes are recorded in `artifacts/run_manifest_latest.json`.
-  - Claim-facing statement mapping is maintained in `docs/results/artifact_claim_index.md`.
-3. Null calibration and significance reporting across pipelines. **Status: In Force (Core Cryptanalytic Pipelines)**
-  - Permutation/bootstrap-based outputs are published in primary artifacts.
-  - Effect-size and uncertainty context are linked via claim-indexed result docs.
-4. Baseline family expansion and balancing. **Status: Pending**
+1. Baseline family expansion and balancing. **Status: Pending**
   - Add broader medieval/control families (scribal abbreviations, liturgical repetition, technical recipe texts, constrained poetic forms, pseudo-script traditions).
   - Maintain family-aware comparisons, not only aggregate baselines.
-5. Cross-validation and out-of-sample checks. **Status: Partial**
+2. Cross-validation and out-of-sample checks. **Status: Partial**
   - Retain holdout evaluation for text models.
   - Expand to stronger section-level and manuscript-level out-of-sample diagnostics.
-6. Periodicity robustness under adversarial preprocessing. **Status: In Force (Current Scope)**
-  - Continue tokenization/transcription sensitivity tests and full lag-surface publication.
-  - Treat unstable components (currently word-lag-13 and phase-dependent char-lag-6 behavior) as conditional, not core.
-  - Keep robust components (currently char-lag-5) separated from weaker signals in claims.
-7. Blind astronomy governance and disclosure discipline. **Status: In Force (Protocol), Partial (Measured-Folio Evidence)**
-  - Blind governance protocol is codified in `docs/methodology/astronomy_blind_governance_protocol.md`.
-  - Preregistration scaffold remains at `docs/methodology/astronomy_preregistration_template.md`.
-  - Separation between scaffold/template runs and measured-folio claims remains mandatory.
+3. Blind astronomy measured-folio evidence and disclosure completion. **Status: Partial**
+  - Blind governance protocol is active, but measured-folio evidence remains incomplete.
+  - Publish full measured-folio ranking surface, near-ties, and false-match calibration.
+  - Keep scaffold/template outputs separated from measured-folio claim language.
 
 ## Controls Already In Force
 
@@ -209,6 +196,21 @@ The following control is active and retained for auditability. It is not part of
 1. Claim-boundary enforcement. **Status: In Force**
   - Keep process-class and constrained-dependence claims primary.
   - Keep named-attribution and motive reconstruction explicitly out of scope unless independent multi-modal evidence converges.
+2. Input data immutability and provenance tracking. **Status: In Force**
+  - Deterministic transcript/control provenance guardrails are active by default.
+  - Current input hashes are frozen in `artifacts/run_manifest_latest.json`.
+3. Full run provenance for reproducibility. **Status: In Force (Current Artifact Batch)**
+  - Command bundle, environment, commit SHA, and artifact hashes are recorded in `artifacts/run_manifest_latest.json`.
+  - Claim-facing statement mapping is maintained in `docs/results/artifact_claim_index.md`.
+4. Null calibration and significance reporting across core cryptanalytic pipelines. **Status: In Force**
+  - Permutation/bootstrap-based outputs are published in primary artifacts.
+  - Effect-size and uncertainty context are linked via claim-indexed result docs.
+5. Periodicity robustness under adversarial preprocessing (current scope). **Status: In Force**
+  - Full lag-surface and sensitivity outputs are published for current scope.
+  - Unstable components remain conditional; robust components are separated in claim language.
+6. Blind astronomy governance protocol. **Status: In Force**
+  - Protocol is codified in `docs/methodology/astronomy_blind_governance_protocol.md`.
+  - Preregistration scaffold remains at `docs/methodology/astronomy_preregistration_template.md`.
 
 Hardening references:
 1. Run provenance standard: `docs/methodology/run_provenance_standard.md`
