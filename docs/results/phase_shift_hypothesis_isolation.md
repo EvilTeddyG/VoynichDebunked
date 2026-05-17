@@ -8,6 +8,10 @@ Question tested:
 - Does a two-phase production model explain the data better than a single uniform process?
 - If yes, which signal is strongest: lag-6 magnitude shift or global profile regularization shift?
 
+Current defensible statement:
+
+The Voynich Manuscript exhibits constrained procedural behavior, positional dependence, and nonrandom geometric structure that are more consistent with an engineered hybrid artifact than with conventional high-information semantic encoding systems, while specific mechanism identity and authorship remain open.
+
 ## Data and Setup
 
 Inputs:

@@ -26,6 +26,10 @@ Current strongest empirical convergence is the joint pattern of:
 3. Synthetic model reproducibility in the same anomaly region.
 4. Section-level phase heterogeneity: late folios show higher lag-6 concentration than early folios under the min-800 section test.
 
+Current defensible statement:
+
+**"The Voynich Manuscript exhibits constrained procedural behavior, positional dependence, and nonrandom geometric structure that are more consistent with an engineered hybrid artifact than with conventional high-information semantic encoding systems, while specific mechanism identity and authorship remain open."**
+
 Astronomy-layer defensible claim boundary (current scaffold stage):
 1. Under blinded comparative evaluation, geometric scoring yields a structured ranking surface with a narrow early-1430s best-fit basin.
 2. This supports constrained historical dependence inference, not authorship identification and not manuscript-level historical confirmation.
