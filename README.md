@@ -1,4 +1,4 @@
-# 🔬 Voynich Debunked: Mechanical-Generation Hypothesis Package
+﻿# 🔬 Voynich Debunked: Mechanical-Generation Hypothesis Package
 ### *Empirical Cryptanalytic and Physical Reverse-Engineering of Beinecke MS 408*
 
 [![GitHub license](https://img.shields.io/github/license/EvilTeddyG/Voynich-Debunked)](https://github.com/EvilTeddyG/Voynich-Debunked/blob/main/LICENSE)
@@ -69,34 +69,34 @@ cd Voynich-Debunked
 
 # Optional but recommended: fetch transcript deterministically
 # (replace URL/hash with your chosen canonical source snapshot)
-python fetch_takahashi.py --url "<TRANSCRIPT_URL>" --output data/takahashi_eva.txt --sha256 "<EXPECTED_SHA256>"
+python scripts/fetch_takahashi.py --url "<TRANSCRIPT_URL>" --output data/takahashi_eva.txt --sha256 "<EXPECTED_SHA256>"
 
 # Run the raw mathematical profiling & entropy audit
-python cryptanalysis_reset.py --input data/takahashi_eva.txt --json-out artifacts/cryptanalysis.json
+python scripts/cryptanalysis_reset.py --input data/takahashi_eva.txt --json-out artifacts/cryptanalysis.json
 
 # Extract the 13-word, 6-character spatial periodicity and vertical alignment
-python stencil_periodicity.py --input data/takahashi_eva.txt --json-out artifacts/stencil_periodicity.json
+python scripts/stencil_periodicity.py --input data/takahashi_eva.txt --json-out artifacts/stencil_periodicity.json
 
 # Execute the automaton engine to generate the synthetic corpus
-python voynich_simulator.py --seed 42 --lines 3000 --output synthetic_voynich_manuscript.txt --json-out artifacts/simulator.json
+python scripts/voynich_simulator.py --seed 42 --lines 3000 --output synthetic_voynich_manuscript.txt --json-out artifacts/simulator.json
 
 # Run permutation/bootstrap significance tests for key peaks
-python significance_tests.py --input data/takahashi_eva.txt --permutations 300 --bootstrap 300 --json-out artifacts/significance.json
+python scripts/significance_tests.py --input data/takahashi_eva.txt --permutations 300 --bootstrap 300 --json-out artifacts/significance.json
 
 # Hold-out folio cross-validation (bigram model scaffold)
-python cross_validate_markov.py --input data/takahashi_eva.txt --holdout-frac 0.2 --repeats 20 --seed 42 --json-out artifacts/cross_validation.json
+python scripts/cross_validate_markov.py --input data/takahashi_eva.txt --holdout-frac 0.2 --repeats 20 --seed 42 --json-out artifacts/cross_validation.json
 
 # Compare Voynich metrics against pseudo-script / medieval control corpora
-python baseline_benchmark.py --voynich data/takahashi_eva.txt --corpora-dir data/baselines --csv-out artifacts/baseline_benchmark.csv --json-out artifacts/baseline_benchmark.json
+python scripts/baseline_benchmark.py --voynich data/takahashi_eva.txt --corpora-dir data/baselines --csv-out artifacts/baseline_benchmark.csv --json-out artifacts/baseline_benchmark.json
 
 # Class-aware comparison against labeled medieval control families
-python control_family_benchmark.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --csv-out artifacts/control_family_benchmark.csv --json-out artifacts/control_family_benchmark.json
+python scripts/control_family_benchmark.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --csv-out artifacts/control_family_benchmark.csv --json-out artifacts/control_family_benchmark.json
 
 # Generate null-calibrated lag spectra across Voynich + control families
-python lag_spectrum_compare.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --max-lag 60 --target-lags 5 6 12 13 --permutations 200 --store-null-targets --store-null-profiles --csv-out artifacts/lag_spectrum_compare.csv --json-out artifacts/lag_spectrum_compare.json
+python scripts/lag_spectrum_compare.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --max-lag 60 --target-lags 5 6 12 13 --permutations 200 --store-null-targets --store-null-profiles --csv-out artifacts/lag_spectrum_compare.csv --json-out artifacts/lag_spectrum_compare.json
 
 # Render spectral visuals and null-distribution histograms (requires matplotlib)
-python plot_lag_spectra.py --csv artifacts/lag_spectrum_compare.csv --json artifacts/lag_spectrum_compare.json --outdir artifacts/plots
+python scripts/plot_lag_spectra.py --csv artifacts/lag_spectrum_compare.csv --json artifacts/lag_spectrum_compare.json --outdir artifacts/plots
 
 # Output includes:
 # - lag_spectra_comparative.png (observed spectra vs controls)
@@ -105,28 +105,28 @@ python plot_lag_spectra.py --csv artifacts/lag_spectrum_compare.csv --json artif
 # - voynich_null_hist_lag*.png (target-lag null histograms)
 
 # Stress-test periodicity claims across tokenization variants and shuffled nulls
-python periodicity_robustness.py --input data/takahashi_eva.txt --target-word-distance 13 --target-char-lags 5 6 --permutations 400 --json-out artifacts/periodicity_robustness.json
+python scripts/periodicity_robustness.py --input data/takahashi_eva.txt --target-word-distance 13 --target-char-lags 5 6 --permutations 400 --json-out artifacts/periodicity_robustness.json
 
 # Section-level stability audit (manuscript subsection terrain)
-python section_lag_spectrum_compare.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --max-lag 60 --target-lags 5 6 12 13 --permutations 200 --min-section-chars 3000 --csv-out artifacts/section_lag_spectrum_compare.csv --json-out artifacts/section_lag_spectrum_compare.json
-python plot_section_spectra.py --csv artifacts/section_lag_spectrum_compare.csv --out artifacts/plots/section_spectra_grid.png --target-lags 5 6 12 13
+python scripts/section_lag_spectrum_compare.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --max-lag 60 --target-lags 5 6 12 13 --permutations 200 --min-section-chars 3000 --csv-out artifacts/section_lag_spectrum_compare.csv --json-out artifacts/section_lag_spectrum_compare.json
+python scripts/plot_section_spectra.py --csv artifacts/section_lag_spectrum_compare.csv --out artifacts/plots/section_spectra_grid.png --target-lags 5 6 12 13
 
 # Preprocessing sensitivity matrix (assumption drift across normalization variants)
-python preprocessing_sensitivity.py --input data/takahashi_eva.txt --target-lags 5 6 12 13 --max-char-lag 60 --permutations 300 --csv-out artifacts/preprocessing_sensitivity.csv --json-out artifacts/preprocessing_sensitivity.json
-python plot_preprocessing_sensitivity.py --csv artifacts/preprocessing_sensitivity.csv --out artifacts/plots/preprocessing_sensitivity_heatmap.png
+python scripts/preprocessing_sensitivity.py --input data/takahashi_eva.txt --target-lags 5 6 12 13 --max-char-lag 60 --permutations 300 --csv-out artifacts/preprocessing_sensitivity.csv --json-out artifacts/preprocessing_sensitivity.json
+python scripts/plot_preprocessing_sensitivity.py --csv artifacts/preprocessing_sensitivity.csv --out artifacts/plots/preprocessing_sensitivity_heatmap.png
 
 # Astronomy anchor-truth geometric quantification scaffold
-python astronomical_geometry_score.py --folio-json data/astronomy/folio_geometry_template.json --candidate-csv data/astronomy/eclipse_candidates_template.csv --date-window-start 1404 --date-window-end 1438 --null-samples 5000 --folio-null-samples 3000 --similarity-epsilon 0.02 --csv-out artifacts/astronomy_candidate_scores.csv --json-out artifacts/astronomy_overlay_report.json
-python plot_astronomy_geometry.py --csv artifacts/astronomy_candidate_scores.csv --json artifacts/astronomy_overlay_report.json --out artifacts/plots/astronomy_overlay_panels.png
+python scripts/astronomical_geometry_score.py --folio-json data/astronomy/folio_geometry_template.json --candidate-csv data/astronomy/eclipse_candidates_template.csv --date-window-start 1404 --date-window-end 1438 --null-samples 5000 --folio-null-samples 3000 --similarity-epsilon 0.02 --csv-out artifacts/astronomy_candidate_scores.csv --json-out artifacts/astronomy_overlay_report.json
+python scripts/plot_astronomy_geometry.py --csv artifacts/astronomy_candidate_scores.csv --json artifacts/astronomy_overlay_report.json --out artifacts/plots/astronomy_overlay_panels.png
 
 # Blind-ranking mode for preregistered evaluation
-python astronomical_geometry_score.py --folio-json data/astronomy/folio_geometry_template.json --candidate-csv data/astronomy/eclipse_candidates_template.csv --date-window-start 1404 --date-window-end 1438 --null-samples 5000 --folio-null-samples 3000 --similarity-epsilon 0.02 --blind --blind-key-out artifacts/astronomy_blind_key.json --csv-out artifacts/astronomy_candidate_scores_blind.csv --json-out artifacts/astronomy_overlay_report_blind.json
+python scripts/astronomical_geometry_score.py --folio-json data/astronomy/folio_geometry_template.json --candidate-csv data/astronomy/eclipse_candidates_template.csv --date-window-start 1404 --date-window-end 1438 --null-samples 5000 --folio-null-samples 3000 --similarity-epsilon 0.02 --blind --blind-key-out artifacts/astronomy_blind_key.json --csv-out artifacts/astronomy_candidate_scores_blind.csv --json-out artifacts/astronomy_overlay_report_blind.json
 
 # Manual measurement sheet -> scorer JSON bridge
-python foliogeometry_csv_to_json.py --csv data/astronomy/folio_geometry_measurement_sheet_template.csv --json-out data/astronomy/folio_geometry_measured.json
+python scripts/foliogeometry_csv_to_json.py --csv data/astronomy/folio_geometry_measurement_sheet_template.csv --json-out data/astronomy/folio_geometry_measured.json
 
 # Reviewer-facing snapshot of this full output terrain (including ambiguity/failure zones)
-# see: periodicity_empirical_results.md
+# see: docs/results/periodicity_empirical_results.md
 ```
 
 ---
@@ -188,38 +188,38 @@ lake build
 
 *   [`voynich_proof.lean`](voynich_proof.lean) — Lean 4 / Mathlib4 formalization of measured relationships used by the Mechanical Automaton Hypothesis.
 *   [`lakefile.lean`](lakefile.lean) — Lake build configuration (Mathlib4 dependency).
-*   [`fetch_takahashi.py`](fetch_takahashi.py) — Deterministic transcript fetch utility with optional SHA-256 verification.
-*   [`cryptanalysis_reset.py`](cryptanalysis_reset.py) — Cold mathematical profiling of Takahashi unigram/bigram entropy and line positional margins.
-*   [`stencil_periodicity.py`](stencil_periodicity.py) — The spatial periodicity engine extracting the 13-word offsets, 6-character lag spikes, and 7% vertical column alignment rate.
-*   [`voynich_simulator.py`](voynich_simulator.py) — The Markov transition automaton that successfully generates a synthetic 37,000-word corpus matching the statistical profile of Beinecke MS 408 to within **0.15 bits**.
-*   [`significance_tests.py`](significance_tests.py) — Bootstrap/permutation tests for entropy, distance peaks, and lag peaks under shuffled null models.
-*   [`cross_validate_markov.py`](cross_validate_markov.py) — Repeated hold-out folio cross-validation comparing bigram vs unigram predictive fit with interval summaries.
-*   [`baseline_benchmark.py`](baseline_benchmark.py) — Comparative metric panel runner for external medieval/pseudo-script control corpora.
-*   [`control_family_benchmark.py`](control_family_benchmark.py) — Labeled control-family benchmark producing class-conditional effect sizes and nearest-control diagnostics.
-*   [`lag_spectrum_compare.py`](lag_spectrum_compare.py) — Null-calibrated lag-spectrum export across Voynich and control families for periodicity scrutiny.
-*   [`plot_lag_spectra.py`](plot_lag_spectra.py) — Comparative spectral plots and target-lag null histograms for reviewer-facing periodicity evidence.
-*   [`periodicity_robustness.py`](periodicity_robustness.py) — Tokenization-variant periodicity audit with permutation nulls, z-scores, and false-positive calibration for lag/spacing peaks.
-*   [`section_lag_spectrum_compare.py`](section_lag_spectrum_compare.py) — Section-stratified lag-spectrum export for manuscript-level stability checks.
-*   [`plot_section_spectra.py`](plot_section_spectra.py) — Grid visualization of section-level spectra with null envelopes and target-lag markers.
-*   [`preprocessing_sensitivity.py`](preprocessing_sensitivity.py) — Variant matrix quantifying target-lag drift across tokenization/normalization assumptions.
-*   [`plot_preprocessing_sensitivity.py`](plot_preprocessing_sensitivity.py) — Heatmap visualization of preprocessing sensitivity for z-scores and p-values.
-*   [`astronomical_geometry_score.py`](astronomical_geometry_score.py) — Geometric matching scaffold for folio astronomy features vs candidate eclipse/event templates with null rarity calibration.
-*   [`plot_astronomy_geometry.py`](plot_astronomy_geometry.py) — Ranking and null-band diagnostics for astronomy geometry matching outputs.
-*   [`foliogeometry_csv_to_json.py`](foliogeometry_csv_to_json.py) — Converts manual folio geometry measurement sheets into scorer-ready JSON.
+*   [`scripts/fetch_takahashi.py`](scripts/fetch_takahashi.py) — Deterministic transcript fetch utility with optional SHA-256 verification.
+*   [`scripts/cryptanalysis_reset.py`](scripts/cryptanalysis_reset.py) — Cold mathematical profiling of Takahashi unigram/bigram entropy and line positional margins.
+*   [`scripts/stencil_periodicity.py`](scripts/stencil_periodicity.py) — The spatial periodicity engine extracting the 13-word offsets, 6-character lag spikes, and 7% vertical column alignment rate.
+*   [`scripts/voynich_simulator.py`](scripts/voynich_simulator.py) — The Markov transition automaton that successfully generates a synthetic 37,000-word corpus matching the statistical profile of Beinecke MS 408 to within **0.15 bits**.
+*   [`scripts/significance_tests.py`](scripts/significance_tests.py) — Bootstrap/permutation tests for entropy, distance peaks, and lag peaks under shuffled null models.
+*   [`scripts/cross_validate_markov.py`](scripts/cross_validate_markov.py) — Repeated hold-out folio cross-validation comparing bigram vs unigram predictive fit with interval summaries.
+*   [`scripts/baseline_benchmark.py`](scripts/baseline_benchmark.py) — Comparative metric panel runner for external medieval/pseudo-script control corpora.
+*   [`scripts/control_family_benchmark.py`](scripts/control_family_benchmark.py) — Labeled control-family benchmark producing class-conditional effect sizes and nearest-control diagnostics.
+*   [`scripts/lag_spectrum_compare.py`](scripts/lag_spectrum_compare.py) — Null-calibrated lag-spectrum export across Voynich and control families for periodicity scrutiny.
+*   [`scripts/plot_lag_spectra.py`](scripts/plot_lag_spectra.py) — Comparative spectral plots and target-lag null histograms for reviewer-facing periodicity evidence.
+*   [`scripts/periodicity_robustness.py`](scripts/periodicity_robustness.py) — Tokenization-variant periodicity audit with permutation nulls, z-scores, and false-positive calibration for lag/spacing peaks.
+*   [`scripts/section_lag_spectrum_compare.py`](scripts/section_lag_spectrum_compare.py) — Section-stratified lag-spectrum export for manuscript-level stability checks.
+*   [`scripts/plot_section_spectra.py`](scripts/plot_section_spectra.py) — Grid visualization of section-level spectra with null envelopes and target-lag markers.
+*   [`scripts/preprocessing_sensitivity.py`](scripts/preprocessing_sensitivity.py) — Variant matrix quantifying target-lag drift across tokenization/normalization assumptions.
+*   [`scripts/plot_preprocessing_sensitivity.py`](scripts/plot_preprocessing_sensitivity.py) — Heatmap visualization of preprocessing sensitivity for z-scores and p-values.
+*   [`scripts/astronomical_geometry_score.py`](scripts/astronomical_geometry_score.py) — Geometric matching scaffold for folio astronomy features vs candidate eclipse/event templates with null rarity calibration.
+*   [`scripts/plot_astronomy_geometry.py`](scripts/plot_astronomy_geometry.py) — Ranking and null-band diagnostics for astronomy geometry matching outputs.
+*   [`scripts/foliogeometry_csv_to_json.py`](scripts/foliogeometry_csv_to_json.py) — Converts manual folio geometry measurement sheets into scorer-ready JSON.
 *   [`data/astronomy/folio_geometry_template.json`](data/astronomy/folio_geometry_template.json) — Template folio geometry extraction schema for astronomical panels.
 *   [`data/astronomy/folio_geometry_measurement_sheet_template.csv`](data/astronomy/folio_geometry_measurement_sheet_template.csv) — Manual measurement entry template for real folio geometry extraction.
 *   [`data/astronomy/eclipse_candidates_template.csv`](data/astronomy/eclipse_candidates_template.csv) — Template candidate event feature table in the vellum-date window.
-*   [`astronomy_preregistration_template.md`](astronomy_preregistration_template.md) — Preregistered analysis template for blind-ranking astronomy geometry studies.
-*   [`astronomy_geometry_results.md`](astronomy_geometry_results.md) — Current scaffold output for astronomy-geometry matching with strict non-proof caveats.
-*   [`periodicity_empirical_results.md`](periodicity_empirical_results.md) — Current empirical periodicity output snapshot with explicit ambiguity, secondary peaks, and weak-zone reporting.
+*   [`docs/methodology/astronomy_preregistration_template.md`](docs/methodology/astronomy_preregistration_template.md) — Preregistered analysis template for blind-ranking astronomy geometry studies.
+*   [`docs/results/astronomy_geometry_results.md`](docs/results/astronomy_geometry_results.md) — Current scaffold output for astronomy-geometry matching with strict non-proof caveats.
+*   [`docs/results/periodicity_empirical_results.md`](docs/results/periodicity_empirical_results.md) — Current empirical periodicity output snapshot with explicit ambiguity, secondary peaks, and weak-zone reporting.
 *   [`data/baselines/manifest_template.csv`](data/baselines/manifest_template.csv) — Template manifest for comparison corpora grouped by historical control family.
 *   [`synthetic_voynich_manuscript.txt`](synthetic_voynich_manuscript.txt) — High-fidelity synthetic mockup manuscript generated using our physical template parameters.
-*   [`comparison_audit.md`](comparison_audit.md) — Side-by-side line visual alignment and quantitative benchmark comparison.
-*   [`voynich_scientific_proof.md`](voynich_scientific_proof.md) — Quantitative Markov-style model analysis focused on entropy and line effects.
-*   [`voynich_stencil_proof.md`](voynich_stencil_proof.md) — Spatial periodicity analysis for the grille-model interpretation.
-*   [`voynich_historical_precedents.md`](voynich_historical_precedents.md) — The historical grounding paper detailing early 15th-century scriptorium *patrons*.
-*   [`voynich_historical_references.md`](voynich_historical_references.md) — Corroborating historical evidence: documented patron use in the Veneto, Renaissance hoax manuscript sales (Rudolf II, Müller/Kircher), and the Giovanni Fontana network as the strongest production-environment correlate.
-*   [`voynich_anchor_truth_hypothesis.md`](voynich_anchor_truth_hypothesis.md) — Hypothesis note on using verifiable astronomical structure as an authenticity anchor around potentially low-information text.
+*   [`docs/research/comparison_audit.md`](docs/research/comparison_audit.md) — Side-by-side line visual alignment and quantitative benchmark comparison.
+*   [`docs/research/voynich_scientific_proof.md`](docs/research/voynich_scientific_proof.md) — Quantitative Markov-style model analysis focused on entropy and line effects.
+*   [`docs/research/voynich_stencil_proof.md`](docs/research/voynich_stencil_proof.md) — Spatial periodicity analysis for the grille-model interpretation.
+*   [`docs/research/voynich_historical_precedents.md`](docs/research/voynich_historical_precedents.md) — The historical grounding paper detailing early 15th-century scriptorium *patrons*.
+*   [`docs/research/voynich_historical_references.md`](docs/research/voynich_historical_references.md) — Corroborating historical evidence: documented patron use in the Veneto, Renaissance hoax manuscript sales (Rudolf II, Müller/Kircher), and the Giovanni Fontana network as the strongest production-environment correlate.
+*   [`docs/research/voynich_anchor_truth_hypothesis.md`](docs/research/voynich_anchor_truth_hypothesis.md) — Hypothesis note on using verifiable astronomical structure as an authenticity anchor around potentially low-information text.
 *   [`CITATIONS.md`](CITATIONS.md) — Master bibliography: all primary sources, transcript data, information-theory foundations, cryptanalytic scholarship, historical provenance, codicological context, and the formal proof toolchain. Includes a full BibTeX block.
 
 ---
@@ -238,3 +238,5 @@ If you utilize this codebase, data, or scientific papers in your research, compu
   howpublished = {\url{https://github.com/EvilTeddyG/Voynich-Debunked}}
 }
 ```
+
+
