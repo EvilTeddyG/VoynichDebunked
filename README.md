@@ -1,4 +1,4 @@
-# 🔬 VoynichDebunked: The Mechanical Automaton Proof
+# 🔬 Voynich Debunked: The Mechanical Automaton Proof
 ### *Empirical Cryptanalytic and Physical Reverse-Engineering of Beinecke MS 408*
 
 [![GitHub license](https://img.shields.io/github/license/EvilTeddyG/VoynichDebunked)](https://github.com/EvilTeddyG/VoynichDebunked/blob/main/LICENSE)
