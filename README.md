@@ -24,6 +24,7 @@ Current strongest empirical convergence is the joint pattern of:
 1. Very low conditional entropy.
 2. Strong line-position effects.
 3. Synthetic model reproducibility in the same anomaly region.
+4. Section-level phase heterogeneity: late folios show higher lag-6 concentration than early folios under the min-800 section test.
 
 Astronomy-layer defensible claim boundary (current scaffold stage):
 1. Under blinded comparative evaluation, geometric scoring yields a structured ranking surface with a narrow early-1430s best-fit basin.
@@ -54,7 +55,7 @@ Once a character is written, the transition to the next is highly pre-determined
 ### 2. The Physical Grille Dimensions (Spatial Periodicity)
 Current historical-transcript readout supports a narrower claim boundary:
 *   **The 13-word spacing pattern is descriptive, not core:** repeated phrase offsets still show a 13-word count peak in raw scans, but robustness tests do not support it as a publication-grade theorem anchor.
-*   **The 5-to-6 Character Grille Window remains a candidate signal:** character-level scans show strong raw autocorrelation at lags 5 and 6, but only lag 5 remains robust across the stricter preprocessing panel.
+*   **The 5-to-6 Character Grille Window remains phase-dependent:** character-level scans show strong raw autocorrelation at lags 5 and 6. In the 65-section (`min_section_chars=800`) early-vs-late test, lag-6 concentration is significantly higher in late folios (permutation $p\approx0.0196$), while a single global lag-6 changepoint is not yet significant.
 *   **The Vertical Column Match Rate (7.00%):** Across **191,323 line-to-line comparisons**, characters like `o` and `e` align directly on top of each other at identical column coordinates on consecutive lines. This is the direct physical footprint of a stencil grid being slid vertically down the page line-by-line.
 
 ---
@@ -141,6 +142,9 @@ python scripts/foliogeometry_csv_to_json.py --csv data/astronomy/folio_geometry_
 # Reviewer-facing snapshot of this full output terrain (including ambiguity/failure zones)
 # see: docs/results/periodicity_empirical_results.md
 
+# Early-vs-late phase-shift isolation memo (hypothesis stress test)
+# see: docs/results/phase_shift_hypothesis_isolation.md
+
 # Plain-language summary for non-academic readers
 # see: docs/results/research_summary_for_non_academics.md
 ```
@@ -187,7 +191,7 @@ Status labels are intentionally conservative.
   - Expand to stronger section-level and manuscript-level out-of-sample diagnostics.
 6. Periodicity robustness under adversarial preprocessing. **Status: Partial**
   - Continue tokenization/transcription sensitivity tests and full lag-surface publication.
-  - Treat unstable components (currently word-lag-13 and char-lag-6) as conditional, not core.
+  - Treat unstable components (currently word-lag-13 and phase-dependent char-lag-6 behavior) as conditional, not core.
   - Keep robust components (currently char-lag-5) separated from weaker signals in claims.
 7. Blind astronomy governance and disclosure discipline. **Status: Partial**
   - Freeze scoring rule and interpretation notes before unblinding.
