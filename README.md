@@ -119,6 +119,12 @@ python plot_preprocessing_sensitivity.py --csv artifacts/preprocessing_sensitivi
 python astronomical_geometry_score.py --folio-json data/astronomy/folio_geometry_template.json --candidate-csv data/astronomy/eclipse_candidates_template.csv --date-window-start 1404 --date-window-end 1438 --null-samples 5000 --csv-out artifacts/astronomy_candidate_scores.csv --json-out artifacts/astronomy_overlay_report.json
 python plot_astronomy_geometry.py --csv artifacts/astronomy_candidate_scores.csv --json artifacts/astronomy_overlay_report.json --out artifacts/plots/astronomy_overlay_panels.png
 
+# Blind-ranking mode for preregistered evaluation
+python astronomical_geometry_score.py --folio-json data/astronomy/folio_geometry_template.json --candidate-csv data/astronomy/eclipse_candidates_template.csv --date-window-start 1404 --date-window-end 1438 --null-samples 5000 --blind --blind-key-out artifacts/astronomy_blind_key.json --csv-out artifacts/astronomy_candidate_scores_blind.csv --json-out artifacts/astronomy_overlay_report_blind.json
+
+# Manual measurement sheet -> scorer JSON bridge
+python foliogeometry_csv_to_json.py --csv data/astronomy/folio_geometry_measurement_sheet_template.csv --json-out data/astronomy/folio_geometry_measured.json
+
 # Reviewer-facing snapshot of this full output terrain (including ambiguity/failure zones)
 # see: periodicity_empirical_results.md
 ```
@@ -199,8 +205,11 @@ lake build
 *   [`plot_preprocessing_sensitivity.py`](plot_preprocessing_sensitivity.py) — Heatmap visualization of preprocessing sensitivity for z-scores and p-values.
 *   [`astronomical_geometry_score.py`](astronomical_geometry_score.py) — Geometric matching scaffold for folio astronomy features vs candidate eclipse/event templates with null rarity calibration.
 *   [`plot_astronomy_geometry.py`](plot_astronomy_geometry.py) — Ranking and null-band diagnostics for astronomy geometry matching outputs.
+*   [`foliogeometry_csv_to_json.py`](foliogeometry_csv_to_json.py) — Converts manual folio geometry measurement sheets into scorer-ready JSON.
 *   [`data/astronomy/folio_geometry_template.json`](data/astronomy/folio_geometry_template.json) — Template folio geometry extraction schema for astronomical panels.
+*   [`data/astronomy/folio_geometry_measurement_sheet_template.csv`](data/astronomy/folio_geometry_measurement_sheet_template.csv) — Manual measurement entry template for real folio geometry extraction.
 *   [`data/astronomy/eclipse_candidates_template.csv`](data/astronomy/eclipse_candidates_template.csv) — Template candidate event feature table in the vellum-date window.
+*   [`astronomy_preregistration_template.md`](astronomy_preregistration_template.md) — Preregistered analysis template for blind-ranking astronomy geometry studies.
 *   [`astronomy_geometry_results.md`](astronomy_geometry_results.md) — Current scaffold output for astronomy-geometry matching with strict non-proof caveats.
 *   [`periodicity_empirical_results.md`](periodicity_empirical_results.md) — Current empirical periodicity output snapshot with explicit ambiguity, secondary peaks, and weak-zone reporting.
 *   [`data/baselines/manifest_template.csv`](data/baselines/manifest_template.csv) — Template manifest for comparison corpora grouped by historical control family.

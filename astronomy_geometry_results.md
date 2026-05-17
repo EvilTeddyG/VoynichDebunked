@@ -15,6 +15,10 @@ They are demonstration outputs for pipeline behavior, not manuscript-grade infer
 - [artifacts/astronomy_candidate_scores.csv](artifacts/astronomy_candidate_scores.csv)
 - [artifacts/astronomy_overlay_report.json](artifacts/astronomy_overlay_report.json)
 - [artifacts/plots/astronomy_overlay_panels.png](artifacts/plots/astronomy_overlay_panels.png)
+- [artifacts/astronomy_candidate_scores_blind.csv](artifacts/astronomy_candidate_scores_blind.csv)
+- [artifacts/astronomy_overlay_report_blind.json](artifacts/astronomy_overlay_report_blind.json)
+- [artifacts/astronomy_blind_key.json](artifacts/astronomy_blind_key.json)
+- [artifacts/plots/astronomy_overlay_panels_blind.png](artifacts/plots/astronomy_overlay_panels_blind.png)
 
 ## Current Scaffold Output
 
@@ -23,6 +27,11 @@ From [artifacts/astronomy_overlay_report.json](artifacts/astronomy_overlay_repor
 - Best candidate (within 1404-1438 window): `ecl_1433_06_17` (1433-06-17)
 - Best score: 0.075884 (lower = better)
 - Null calibration: `p_value_le = 0.00019996`, `z = -3.722`
+
+Blind-mode scaffold output:
+- Best blinded candidate code: `C001`
+- Same score/null metrics as non-blind run (as expected on same template inputs)
+- Unblinding key is emitted separately to [artifacts/astronomy_blind_key.json](artifacts/astronomy_blind_key.json)
 
 ## Interpretation Discipline
 
@@ -40,3 +49,4 @@ What is required next:
 2. Expand candidate table across the full eclipse set in the date window.
 3. Pre-register feature weights and scoring rule before reranking.
 4. Report false-match rates under multiple null constructions.
+5. Run blinded ranking first, freeze interpretation notes, then unblind via the key file.

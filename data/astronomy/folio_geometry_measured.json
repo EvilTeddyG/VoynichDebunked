@@ -1,0 +1,35 @@
+{
+  "metadata": {
+    "description": "Measured folio geometry converted from manual CSV sheet",
+    "source_csv": "data/astronomy/folio_geometry_measurement_sheet_template.csv"
+  },
+  "folios": [
+    {
+      "folio": "f67r",
+      "spoke_count": 12,
+      "ring_count": 4,
+      "zodiac_divisions": 12,
+      "ring_spacing_cv": 0.08,
+      "occlusion_phase": 0.5,
+      "calibration_density": 0.72
+    },
+    {
+      "folio": "f67v",
+      "spoke_count": 12,
+      "ring_count": 4,
+      "zodiac_divisions": 12,
+      "ring_spacing_cv": 0.1,
+      "occlusion_phase": 0.42,
+      "calibration_density": 0.67
+    },
+    {
+      "folio": "f68r",
+      "spoke_count": 12,
+      "ring_count": 5,
+      "zodiac_divisions": 12,
+      "ring_spacing_cv": 0.09,
+      "occlusion_phase": 0.48,
+      "calibration_density": 0.7
+    }
+  ]
+}

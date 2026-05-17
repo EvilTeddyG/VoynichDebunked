@@ -1,0 +1,35 @@
+{
+  "warning": "Unblinding key: keep private until ranking decisions are frozen.",
+  "mapping": [
+    {
+      "candidate_code": "C005",
+      "event_id": "ecl_1409_12_22",
+      "date": "1409-12-22",
+      "year": 1409
+    },
+    {
+      "candidate_code": "C004",
+      "event_id": "ecl_1415_03_07",
+      "date": "1415-03-07",
+      "year": 1415
+    },
+    {
+      "candidate_code": "C003",
+      "event_id": "ecl_1428_11_26",
+      "date": "1428-11-26",
+      "year": 1428
+    },
+    {
+      "candidate_code": "C001",
+      "event_id": "ecl_1433_06_17",
+      "date": "1433-06-17",
+      "year": 1433
+    },
+    {
+      "candidate_code": "C002",
+      "event_id": "ecl_1436_09_04",
+      "date": "1436-09-04",
+      "year": 1436
+    }
+  ]
+}
