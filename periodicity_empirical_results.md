@@ -17,6 +17,8 @@ Primary numeric outputs:
 - [artifacts/lag_spectrum_compare.csv](artifacts/lag_spectrum_compare.csv)
 - [artifacts/lag_spectrum_compare.json](artifacts/lag_spectrum_compare.json)
 - [artifacts/periodicity_robustness.json](artifacts/periodicity_robustness.json)
+- [artifacts/section_lag_spectrum_compare.csv](artifacts/section_lag_spectrum_compare.csv)
+- [artifacts/section_lag_spectrum_compare.json](artifacts/section_lag_spectrum_compare.json)
 
 Visual outputs:
 - [artifacts/plots/lag_spectra_comparative.png](artifacts/plots/lag_spectra_comparative.png)
@@ -26,6 +28,7 @@ Visual outputs:
 - [artifacts/plots/voynich_null_hist_lag6.png](artifacts/plots/voynich_null_hist_lag6.png)
 - [artifacts/plots/voynich_null_hist_lag12.png](artifacts/plots/voynich_null_hist_lag12.png)
 - [artifacts/plots/voynich_null_hist_lag13.png](artifacts/plots/voynich_null_hist_lag13.png)
+- [artifacts/plots/section_spectra_grid.png](artifacts/plots/section_spectra_grid.png)
 
 ## Lag-Spectrum Results (Voynich Record in Current Run)
 
@@ -47,6 +50,28 @@ Interpretation from these values:
 - Lag 5 appears elevated in this run.
 - Lags 6, 12, and 13 do not appear elevated under the current null framing.
 - The strongest peak is at lag 4, not lag 13.
+
+## Section-Level Stability (Current Run)
+
+Source: [artifacts/section_lag_spectrum_compare.json](artifacts/section_lag_spectrum_compare.json)
+
+- Section retention threshold: 3,000 characters.
+- Retained sections: 1 (`SIM`).
+- Section `SIM` peak lag/value: lag 4, value 0.00604423.
+
+Section `SIM` target lag summary:
+
+| Lag | Observed | z-score | p-value (null >= observed) | Rank in profile |
+|---|---:|---:|---:|---:|
+| 5  | +0.00366221 | +4.0436 | 0.00498 | 2  |
+| 6  | -0.00071979 | -0.7390 | 0.73632 | 41 |
+| 12 | -0.00013880 | -0.1722 | 0.58209 | 27 |
+| 13 | -0.00170671 | -1.8442 | 0.97015 | 54 |
+
+Interpretation for section-level evidence in this run:
+- The section-level panel does not support lag 13 as a dominant feature.
+- Lag 5 remains elevated in the retained section.
+- Because all retained data are under synthetic `SIM` tags in this run, this is a pipeline-stability demonstration rather than historical-section inference.
 
 ## Tokenization Robustness (Ambiguity and Failure Exposure)
 

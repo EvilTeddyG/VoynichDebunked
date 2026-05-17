@@ -107,6 +107,10 @@ python plot_lag_spectra.py --csv artifacts/lag_spectrum_compare.csv --json artif
 # Stress-test periodicity claims across tokenization variants and shuffled nulls
 python periodicity_robustness.py --input data/takahashi_eva.txt --target-word-distance 13 --target-char-lags 5 6 --permutations 400 --json-out artifacts/periodicity_robustness.json
 
+# Section-level stability audit (manuscript subsection terrain)
+python section_lag_spectrum_compare.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --max-lag 60 --target-lags 5 6 12 13 --permutations 200 --min-section-chars 3000 --csv-out artifacts/section_lag_spectrum_compare.csv --json-out artifacts/section_lag_spectrum_compare.json
+python plot_section_spectra.py --csv artifacts/section_lag_spectrum_compare.csv --out artifacts/plots/section_spectra_grid.png --target-lags 5 6 12 13
+
 # Reviewer-facing snapshot of this full output terrain (including ambiguity/failure zones)
 # see: periodicity_empirical_results.md
 ```
@@ -181,6 +185,8 @@ lake build
 *   [`lag_spectrum_compare.py`](lag_spectrum_compare.py) — Null-calibrated lag-spectrum export across Voynich and control families for periodicity scrutiny.
 *   [`plot_lag_spectra.py`](plot_lag_spectra.py) — Comparative spectral plots and target-lag null histograms for reviewer-facing periodicity evidence.
 *   [`periodicity_robustness.py`](periodicity_robustness.py) — Tokenization-variant periodicity audit with permutation nulls, z-scores, and false-positive calibration for lag/spacing peaks.
+*   [`section_lag_spectrum_compare.py`](section_lag_spectrum_compare.py) — Section-stratified lag-spectrum export for manuscript-level stability checks.
+*   [`plot_section_spectra.py`](plot_section_spectra.py) — Grid visualization of section-level spectra with null envelopes and target-lag markers.
 *   [`periodicity_empirical_results.md`](periodicity_empirical_results.md) — Current empirical periodicity output snapshot with explicit ambiguity, secondary peaks, and weak-zone reporting.
 *   [`data/baselines/manifest_template.csv`](data/baselines/manifest_template.csv) — Template manifest for comparison corpora grouped by historical control family.
 *   [`synthetic_voynich_manuscript.txt`](synthetic_voynich_manuscript.txt) — High-fidelity synthetic mockup manuscript generated using our physical template parameters.
