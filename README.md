@@ -89,6 +89,9 @@ python cross_validate_markov.py --input data/takahashi_eva.txt --holdout-frac 0.
 # Compare Voynich metrics against pseudo-script / medieval control corpora
 python baseline_benchmark.py --voynich data/takahashi_eva.txt --corpora-dir data/baselines --csv-out artifacts/baseline_benchmark.csv --json-out artifacts/baseline_benchmark.json
 
+# Class-aware comparison against labeled medieval control families
+python control_family_benchmark.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --csv-out artifacts/control_family_benchmark.csv --json-out artifacts/control_family_benchmark.json
+
 # Stress-test periodicity claims across tokenization variants and shuffled nulls
 python periodicity_robustness.py --input data/takahashi_eva.txt --target-word-distance 13 --target-char-lags 5 6 --permutations 400 --json-out artifacts/periodicity_robustness.json
 ```
@@ -133,6 +136,11 @@ Notes on current vulnerability profile:
 2. Positional binding is currently the hardest signal to explain under unconstrained semantic models.
 3. The 13-word periodicity claim remains the most statistically attackable component until full robustness diagnostics are complete (spectral views, variant tokenization checks, and false-positive characterization).
 
+Interpretation rule for control-family analysis:
+1. Compare Voynich against *family-conditioned* distributions, not only aggregate language baselines.
+2. Treat large class-conditional z-scores across multiple families as stronger evidence than any single raw metric.
+3. Prioritize robustness where nearest-neighbor controls belong to pseudo-semantic classes.
+
 To type-check the proofs locally:
 
 ```bash
@@ -154,7 +162,9 @@ lake build
 *   [`significance_tests.py`](significance_tests.py) — Bootstrap/permutation tests for entropy, distance peaks, and lag peaks under shuffled null models.
 *   [`cross_validate_markov.py`](cross_validate_markov.py) — Repeated hold-out folio cross-validation comparing bigram vs unigram predictive fit with interval summaries.
 *   [`baseline_benchmark.py`](baseline_benchmark.py) — Comparative metric panel runner for external medieval/pseudo-script control corpora.
+*   [`control_family_benchmark.py`](control_family_benchmark.py) — Labeled control-family benchmark producing class-conditional effect sizes and nearest-control diagnostics.
 *   [`periodicity_robustness.py`](periodicity_robustness.py) — Tokenization-variant periodicity audit with permutation nulls, z-scores, and false-positive calibration for lag/spacing peaks.
+*   [`data/baselines/manifest_template.csv`](data/baselines/manifest_template.csv) — Template manifest for comparison corpora grouped by historical control family.
 *   [`synthetic_voynich_manuscript.txt`](synthetic_voynich_manuscript.txt) — High-fidelity synthetic mockup manuscript generated using our physical template parameters.
 *   [`comparison_audit.md`](comparison_audit.md) — Side-by-side line visual alignment and quantitative benchmark comparison.
 *   [`voynich_scientific_proof.md`](voynich_scientific_proof.md) — Quantitative Markov-style model analysis focused on entropy and line effects.
