@@ -1,0 +1,62 @@
+﻿ comparative audit voynich vs constrained synthetic model
+ beinecke ms  and a markovtemplate generator evidenceoriented view
+
+this document compares observed voynich metrics with one constrained synthetic generator class the goal is not to claim identity of mechanism but to evaluate whether a lowstate procedural model can reproduce multiple anomaly signals simultaneously
+
+
+
+  metric snapshot
+
+ metric  voynich observed  synthetic one run  interpretation scope 
+
+ character entropy h      similar alphabetdistribution complexity range 
+ conditional entropy h      both in lowuncertainty regime 
+ vertical column matches      similar elevated alignment rate 
+ dominant phrase spacing signal  word peak present  word peak present  candidate periodicity overlap 
+
+notes
+ similarity in summary metrics does not imply unique causation
+ metrics should be interpreted with controlfamily and nullmodel context
+
+
+
+  what this comparison supports
+
+the sidebyside comparison supports an existence claim
+
+a constrained procedural generator can produce outputs in the same anomaly region as voynichese for entropy positional effects and periodicityrelated signals
+
+that is evidence of model plausibility not exclusive proof
+
+
+
+  what this comparison does not establish
+
+this file alone does not establish
+
+ that the specific generator implementation is historically correct
+ that one exact stencil geometry is uniquely identified
+ that semanticlanguage or cipher alternatives are globally impossible
+ that historical production provenance is proven from simulation metrics
+
+
+
+  where this audit is most informative
+
+this comparison is most informative when read together with
+
+ classaware controls controlfamilybenchmarkpycontrolfamilybenchmarkpy
+ significance and null tests significancetestspysignificancetestspy
+ periodicity robustness stress tests periodicityrobustnesspyperiodicityrobustnesspy
+ holdout predictive checks crossvalidatemarkovpycrossvalidatemarkovpy
+
+the strongest inference is convergence under independent checks not any single table row
+
+
+
+  practical reading rule
+
+use this document as a comparative exhibit not a standalone verdict
+
+if synthetic and observed metrics are close that is sufficient to keep the proceduralgeneration family in play stronger claims require additional evidence from controlfamily separation nullcalibrated spectra and heldout generalization behavior
+

@@ -1,7 +1,7 @@
 label,path,family,notes
-liturgy_sample,liturgy_sample.txt,liturgical_repetition,Example placeholder
-recipe_sample,recipe_sample.txt,medical_recipe,Example placeholder
-alchemical_sample,alchemical_sample.txt,alchemical_notation,Example placeholder
-glossolalia_sample,glossolalia_sample.txt,glossolalia_control,Example placeholder
-pseudo_script_sample,pseudo_script_sample.txt,ornamental_pseudo_script,Example placeholder
-mnemonic_sample,mnemonic_sample.txt,mnemonic_notation,Example placeholder
+liturgy_sample,liturgy_sample.txt,liturgical_repetition,Repository-derived placeholder control
+recipe_sample,recipe_sample.txt,medical_recipe,Repository-derived placeholder control
+alchemical_sample,alchemical_sample.txt,alchemical_notation,Repository-derived placeholder control
+glossolalia_sample,glossolalia_sample.txt,glossolalia_control,Repository-derived placeholder control
+pseudo_script_sample,pseudo_script_sample.txt,ornamental_pseudo_script,Repository-derived placeholder control
+mnemonic_sample,mnemonic_sample.txt,mnemonic_notation,Repository-derived placeholder control

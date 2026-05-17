@@ -1,0 +1,63 @@
+﻿  scientific analysis paper the markov automaton model
+ an empirical cryptanalytic validation of beinecke ms 
+
+ abstract
+this paper presents a quantitative model showing that the voynich manuscript beinecke ms  can be reproduced by a pseudolinguistic lowstate markovstyle generation process with strong fit to observed entropy and positional effects
+
+by constructing a lowstate markov transition chain combined with a spatial layout grid we synthesized a simulated corpus of  words when audited the synthetic text achieved close statistical agreement with manuscript conditional character entropy  bits vs  bits supporting a mechanicalgeneration account
+
+citation key numbered references in brackets map to citationsmdcitationsmd
+
+
+
+  the entropy paradox shorthand vs voynichese
+
+in information theory any shorthand or cryptological compression system operates as an entropy maximizer it seeks to pack the absolute maximum semantic content into the fewest possible pen strokes resulting in higher information density entropy than the source language
+
+voynichese behaves in the exact opposite direction it functions as an entropy reducer it takes simple localized character sets and expands them into long highly redundant structural loops cholchol ororor this creates characterconditional entropy that is statistically impossible for any functional shorthand system
+
+   classical latin h   bits h   bits
+   middle english h   bits h   bits
+   voynichese actual h   bits h   bits extremely low
+   synthetic simulator h   bits h   bits
+
+because character transitions are highly predictable eg q is followed by o  of the time c by h  of the time the text lacks the lexical freedom of natural language it behaves like a lowentropy finitestate markov chain with extremely restricted transitions
+
+
+
+  paleographical anomaly the line effect
+
+in natural language or code syntax flows fluidly across margins in voynichese words are strictly bound by the physical boundaries of the parchment line
+
+our positional polarization audit of the takahashi transcript revealed absolute margins
+   she sheo and shckhy appear hundreds of times in the manuscript but land  of the time in the middle of a line and  of the time at the start or end
+   am lands  of the time at the end of a line
+   y is heavily polarized exclusively at start and end margins
+
+this is evidence consistent with spatial determinism the physical layout of the vellum template may have constrained letter combinations in a way characteristic of stencilbound or templategeneration mechanisms such as a cardan grille variant
+
+
+
+  the generative automaton model
+
+to prove the mechanics of how the text was physically generated we constructed a markov transition simulator operating under three spatial layout rules
+  left margin constraint draw the first word from a restricted highfrequency start word table ot ok y
+  right margin constraint draw the final word of the line from a restricted end word table y dy ey am
+  phonotactic rolling syllables generate internal words using a state markov chain of highprobability glyph transitions q rightarrow o c rightarrow h e rightarrow edy
+
+ empirical audit comparison
+
+the simulation run produced close quantitative alignment with beinecke ms  on key summary metrics
+
+ statistical metric  actual voynich manuscript  synthetic simulated corpus 
+
+ unigram character entropy h   bits   bits 
+ conditional bigram entropy h   bits   bits 
+ positional margin polarization  high eg she   mid  high eg am   end 
+
+
+
+  conclusion
+
+the results support a strong working hypothesis voynichese may be better explained by a mechanically constrained generative process than by a direct naturallanguage plaintextciphertext mapping this paper does not by itself exclude all alternative hypotheses it establishes a reproducible baseline model that future null tests and crossvalidation should challenge
+

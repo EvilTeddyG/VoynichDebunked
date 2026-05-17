@@ -1,0 +1,212 @@
+{
+  "input_file": "D:/Voynich-Debunked/data/takahashi_eva.txt",
+  "seed": 42,
+  "permutations": 400,
+  "target_word_distance": 13,
+  "target_char_lags": [
+    5,
+    6
+  ],
+  "variants": {
+    "alpha_split": {
+      "counts": {
+        "tokens": 25635,
+        "chars": 83509
+      },
+      "word_profile": {
+        "target_distance": 13,
+        "target_observed": 0.04101943642182499,
+        "target_rank": 37,
+        "peak_lag": 27,
+        "peak_value": 0.04639175257731959,
+        "null_mean": 0.043102021700101474,
+        "null_sd": 0.0011561562381389777,
+        "null_q025": 0.04074623370540941,
+        "null_q975": 0.04527359300601046,
+        "p_value_ge": 0.9650872817955112,
+        "z_score": -1.8013009051689626,
+        "false_positive_rate_vs_null_max": 1.0
+      },
+      "char_profile": {
+        "peak_lag": 4,
+        "peak_value": 0.006044228979997748,
+        "targets": {
+          "5": {
+            "observed": 0.003662210999310425,
+            "null_mean": -5.36289604519799e-05,
+            "null_sd": 0.0009227853965297788,
+            "null_q025": -0.001846507145928128,
+            "null_q975": 0.001734159648476924,
+            "p_value_ge": 0.0024937655860349127,
+            "z_score": 4.026765024388304,
+            "rank_in_char_profile": 2
+          },
+          "6": {
+            "observed": -0.0007197921799441398,
+            "null_mean": 1.485208433378512e-05,
+            "null_sd": 0.0009397503484951014,
+            "null_q025": -0.0018694514736222329,
+            "null_q975": 0.0018429899955465512,
+            "p_value_ge": 0.7880299251870324,
+            "z_score": -0.7817440721936103,
+            "rank_in_char_profile": 41
+          }
+        },
+        "false_positive_rate_vs_null_max": {
+          "5": 0.0199501246882793,
+          "6": 1.0
+        }
+      }
+    },
+    "alpha_keep_dots": {
+      "counts": {
+        "tokens": 25635,
+        "chars": 83509
+      },
+      "word_profile": {
+        "target_distance": 13,
+        "target_observed": 0.04101943642182499,
+        "target_rank": 37,
+        "peak_lag": 27,
+        "peak_value": 0.04639175257731959,
+        "null_mean": 0.04314670985871517,
+        "null_sd": 0.0011710774258870715,
+        "null_q025": 0.04082429162438529,
+        "null_q975": 0.04542970884396222,
+        "p_value_ge": 0.9675810473815462,
+        "z_score": -1.8165096430569498,
+        "false_positive_rate_vs_null_max": 1.0
+      },
+      "char_profile": {
+        "peak_lag": 4,
+        "peak_value": 0.006044228979997748,
+        "targets": {
+          "5": {
+            "observed": 0.003662210999310425,
+            "null_mean": -9.020318949777007e-06,
+            "null_sd": 0.0009213549057563282,
+            "null_q025": -0.0017746543005554422,
+            "null_q975": 0.001722184174248173,
+            "p_value_ge": 0.0024937655860349127,
+            "z_score": 3.984600608650948,
+            "rank_in_char_profile": 2
+          },
+          "6": {
+            "observed": -0.0007197921799441398,
+            "null_mean": 2.545050594737919e-05,
+            "null_sd": 0.0009085992758992364,
+            "null_q025": -0.001857475855979715,
+            "null_q975": 0.0017232338191217472,
+            "p_value_ge": 0.7980049875311721,
+            "z_score": -0.8202105214688354,
+            "rank_in_char_profile": 41
+          }
+        },
+        "false_positive_rate_vs_null_max": {
+          "5": 0.00997506234413965,
+          "6": 1.0
+        }
+      }
+    },
+    "alpha_collapse_runs": {
+      "counts": {
+        "tokens": 25635,
+        "chars": 80049
+      },
+      "word_profile": {
+        "target_distance": 13,
+        "target_observed": 0.041878073530559674,
+        "target_rank": 37,
+        "peak_lag": 17,
+        "peak_value": 0.04738855492232024,
+        "null_mean": 0.04413394738896261,
+        "null_sd": 0.0011471891364106036,
+        "null_q025": 0.04191710249004762,
+        "null_q975": 0.04636640387167278,
+        "p_value_ge": 0.9800498753117207,
+        "z_score": -1.9664358620595515,
+        "false_positive_rate_vs_null_max": 1.0
+      },
+      "char_profile": {
+        "peak_lag": 4,
+        "peak_value": 0.014505833607575111,
+        "targets": {
+          "5": {
+            "observed": 0.005724454358728648,
+            "null_mean": 3.820679488875174e-05,
+            "null_sd": 0.001011351439514018,
+            "null_q025": -0.0018838610677867768,
+            "null_q975": 0.002001501982535542,
+            "p_value_ge": 0.0024937655860349127,
+            "z_score": 5.622424947130439,
+            "rank_in_char_profile": 2
+          },
+          "6": {
+            "observed": -0.003619342125335087,
+            "null_mean": -2.8959456019862705e-05,
+            "null_sd": 0.0010042098268863379,
+            "null_q025": -0.001957735239036487,
+            "null_q975": 0.0019026897825144412,
+            "p_value_ge": 1.0,
+            "z_score": -3.575331144137075,
+            "rank_in_char_profile": 56
+          }
+        },
+        "false_positive_rate_vs_null_max": {
+          "5": 0.0024937655860349127,
+          "6": 1.0
+        }
+      }
+    },
+    "alpha_min_len_2": {
+      "counts": {
+        "tokens": 18237,
+        "chars": 76111
+      },
+      "word_profile": {
+        "target_distance": 13,
+        "target_observed": 0.01130377524143986,
+        "target_rank": 26,
+        "peak_lag": 33,
+        "peak_value": 0.013788178422324764,
+        "null_mean": 0.011666346575943811,
+        "null_sd": 0.0008090828881706555,
+        "null_q025": 0.010041703248463565,
+        "null_q975": 0.0132243195785777,
+        "p_value_ge": 0.6957605985037406,
+        "z_score": -0.44812631660487684,
+        "false_positive_rate_vs_null_max": 1.0
+      },
+      "char_profile": {
+        "peak_lag": 4,
+        "peak_value": 0.01138574017250836,
+        "targets": {
+          "5": {
+            "observed": -0.0011085701450318092,
+            "null_mean": 3.5294990437129966e-05,
+            "null_sd": 0.0009981787454304036,
+            "null_q025": -0.001857525549336353,
+            "null_q975": 0.0019266701776759765,
+            "p_value_ge": 0.8728179551122195,
+            "z_score": -1.145952206160949,
+            "rank_in_char_profile": 40
+          },
+          "6": {
+            "observed": -0.0012255726460111138,
+            "null_mean": 3.249187011790677e-05,
+            "null_sd": 0.0010691192807547104,
+            "null_q025": -0.0018956994445131908,
+            "null_q975": 0.002098781864205035,
+            "p_value_ge": 0.8902743142144638,
+            "z_score": -1.1767297987937608,
+            "rank_in_char_profile": 43
+          }
+        },
+        "false_positive_rate_vs_null_max": {
+          "5": 1.0,
+          "6": 1.0
+        }
+      }
+    }
+  }
+}
