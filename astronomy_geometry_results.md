@@ -28,6 +28,17 @@ From [artifacts/astronomy_overlay_report.json](artifacts/astronomy_overlay_repor
 - Best score: 0.075884 (lower = better)
 - Null calibration: `p_value_le = 0.00019996`, `z = -3.722`
 
+Comparative-fit and uniqueness metrics are now included in:
+- `comparative_fit` section of [artifacts/astronomy_overlay_report.json](artifacts/astronomy_overlay_report.json)
+  - best vs runner-up score gap
+  - relative gap
+  - near-tie count within a preregistered epsilon window
+
+False-match calibration under randomized folio extraction geometry is now included in:
+- `false_match_calibration` section of [artifacts/astronomy_overlay_report.json](artifacts/astronomy_overlay_report.json)
+  - `p_value_match`: probability that random folio geometry attains equal/better best-event score
+  - `z_score_match`: standardized separation from random-folio best-fit distribution
+
 Blind-mode scaffold output:
 - Best blinded candidate code: `C001`
 - Same score/null metrics as non-blind run (as expected on same template inputs)
@@ -50,3 +61,9 @@ What is required next:
 3. Pre-register feature weights and scoring rule before reranking.
 4. Report false-match rates under multiple null constructions.
 5. Run blinded ranking first, freeze interpretation notes, then unblind via the key file.
+
+## Historical Use Constraint
+
+If a real measured run eventually shows a strong outlier with low false-match probability,
+the strongest defensible historical implication is narrowing of conceptual source horizon
+(event/instrument tradition window), not definitive manuscript production date or direct authorship proof.

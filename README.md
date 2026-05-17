@@ -116,11 +116,11 @@ python preprocessing_sensitivity.py --input data/takahashi_eva.txt --target-lags
 python plot_preprocessing_sensitivity.py --csv artifacts/preprocessing_sensitivity.csv --out artifacts/plots/preprocessing_sensitivity_heatmap.png
 
 # Astronomy anchor-truth geometric quantification scaffold
-python astronomical_geometry_score.py --folio-json data/astronomy/folio_geometry_template.json --candidate-csv data/astronomy/eclipse_candidates_template.csv --date-window-start 1404 --date-window-end 1438 --null-samples 5000 --csv-out artifacts/astronomy_candidate_scores.csv --json-out artifacts/astronomy_overlay_report.json
+python astronomical_geometry_score.py --folio-json data/astronomy/folio_geometry_template.json --candidate-csv data/astronomy/eclipse_candidates_template.csv --date-window-start 1404 --date-window-end 1438 --null-samples 5000 --folio-null-samples 3000 --similarity-epsilon 0.02 --csv-out artifacts/astronomy_candidate_scores.csv --json-out artifacts/astronomy_overlay_report.json
 python plot_astronomy_geometry.py --csv artifacts/astronomy_candidate_scores.csv --json artifacts/astronomy_overlay_report.json --out artifacts/plots/astronomy_overlay_panels.png
 
 # Blind-ranking mode for preregistered evaluation
-python astronomical_geometry_score.py --folio-json data/astronomy/folio_geometry_template.json --candidate-csv data/astronomy/eclipse_candidates_template.csv --date-window-start 1404 --date-window-end 1438 --null-samples 5000 --blind --blind-key-out artifacts/astronomy_blind_key.json --csv-out artifacts/astronomy_candidate_scores_blind.csv --json-out artifacts/astronomy_overlay_report_blind.json
+python astronomical_geometry_score.py --folio-json data/astronomy/folio_geometry_template.json --candidate-csv data/astronomy/eclipse_candidates_template.csv --date-window-start 1404 --date-window-end 1438 --null-samples 5000 --folio-null-samples 3000 --similarity-epsilon 0.02 --blind --blind-key-out artifacts/astronomy_blind_key.json --csv-out artifacts/astronomy_candidate_scores_blind.csv --json-out artifacts/astronomy_overlay_report_blind.json
 
 # Manual measurement sheet -> scorer JSON bridge
 python foliogeometry_csv_to_json.py --csv data/astronomy/folio_geometry_measurement_sheet_template.csv --json-out data/astronomy/folio_geometry_measured.json

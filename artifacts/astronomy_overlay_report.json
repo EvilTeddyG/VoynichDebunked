@@ -8,7 +8,28 @@
       1438
     ],
     "null_samples": 5000,
-    "seed": 42
+    "folio_null_samples": 3000,
+    "similarity_epsilon": 0.02,
+    "seed": 42,
+    "blind_mode": false,
+    "blind_key_out": null,
+    "scoring_config": {
+      "scales": {
+        "spoke_count": 12.0,
+        "ring_count": 6.0,
+        "zodiac_divisions": 12.0,
+        "occlusion_phase": 1.0,
+        "calibration_density": 1.0
+      },
+      "weights": {
+        "spoke_count": 1.8,
+        "ring_count": 1.2,
+        "zodiac_divisions": 1.8,
+        "occlusion_phase": 1.4,
+        "calibration_density": 1.0
+      },
+      "score_semantics": "Lower score indicates closer geometric fit."
+    }
   },
   "best_candidate": {
     "event_id": "ecl_1433_06_17",
@@ -298,6 +319,22 @@
       }
     }
   ],
+  "comparative_fit": {
+    "candidate_count": 5,
+    "best_score": 0.07588394335721854,
+    "runner_up_score": 0.07994972384072115,
+    "score_gap_abs": 0.004065780483502604,
+    "score_gap_relative": 0.053578929924123955,
+    "near_tie_count_within_epsilon": 2,
+    "near_tie_epsilon": 0.02,
+    "year_window": [
+      1404,
+      1438
+    ],
+    "candidate_year_min": 1409,
+    "candidate_year_max": 1436,
+    "ranking_interpretation": "Larger gap and fewer near ties indicate stronger uniqueness among tested candidates."
+  },
   "null_calibration": {
     "null_mean": 0.501591289046313,
     "null_sd": 0.11438543603718186,
@@ -306,6 +343,15 @@
     "p_value_le": 0.0001999600079984003,
     "z_score": -3.721691855514849,
     "interpretation": "Lower score is better fit; p_value_le is rarity under null random geometry."
+  },
+  "false_match_calibration": {
+    "null_best_mean": 0.4576418094016765,
+    "null_best_sd": 0.0640413282286715,
+    "null_best_q025": 0.325429603554646,
+    "null_best_q975": 0.5769391256917229,
+    "p_value_match": 0.0003332222592469177,
+    "z_score_match": -5.961117244185196,
+    "interpretation": "p_value_match is probability that randomized folio geometry achieves equal or better best-event score."
   },
   "warning": "This report is only as valid as feature extraction quality; template values are placeholders until replaced with measured folio geometry."
 }
