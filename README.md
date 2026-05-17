@@ -140,6 +140,9 @@ python scripts/foliogeometry_csv_to_json.py --csv data/astronomy/folio_geometry_
 
 # Reviewer-facing snapshot of this full output terrain (including ambiguity/failure zones)
 # see: docs/results/periodicity_empirical_results.md
+
+# Plain-language summary for non-academic readers
+# see: docs/results/research_summary_for_non_academics.md
 ```
 
 ---
