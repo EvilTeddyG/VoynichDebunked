@@ -12,7 +12,7 @@ This document compares observed Voynich metrics with one constrained synthetic g
 | Character entropy H0 | 3.9534 | 3.7429 | Similar alphabet-distribution complexity range |
 | Conditional entropy H1 | 2.3102 | 2.1633 | Both in low-uncertainty regime |
 | Vertical column matches | 7.00% | 7.15% | Similar elevated alignment rate |
-| Dominant phrase spacing signal | 13-word peak present | 13-word peak present | Candidate periodicity overlap |
+| Dominant phrase spacing signal | 13-word raw count peak present, robustness weak | 13-word raw count peak present | Descriptive overlap, not a core theorem anchor |
 
 Notes:
 1. Similarity in summary metrics does not imply unique causation.
@@ -24,7 +24,7 @@ Notes:
 
 The side-by-side comparison supports an existence claim:
 
-A constrained procedural generator can produce outputs in the same anomaly region as Voynichese for entropy, positional effects, and periodicity-related signals.
+A constrained procedural generator can produce outputs in the same anomaly region as Voynichese for entropy, positional effects, and some periodicity-related signals.
 
 That is evidence of model plausibility, not exclusive proof.
 

@@ -16,6 +16,8 @@ import random
 import re
 from collections import Counter, defaultdict
 
+from corpus_provenance import ensure_publication_inputs
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Folio-level cross-validation for bigram model")
@@ -24,6 +26,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--seed", type=int, default=42, help="RNG seed")
     parser.add_argument("--alpha", type=float, default=0.5, help="Laplace smoothing alpha")
     parser.add_argument("--repeats", type=int, default=20, help="Number of repeated random holdouts")
+    parser.add_argument(
+        "--allow-placeholder-inputs",
+        action="store_true",
+        help="Allow synthetic/demo transcript inputs instead of publication-grade corpora",
+    )
     parser.add_argument("--json-out", default=None, help="Optional JSON output path")
     return parser.parse_args()
 
@@ -110,6 +117,11 @@ def percentile(sorted_vals: list[float], p: float) -> float:
 def main() -> int:
     args = parse_args()
     random.seed(args.seed)
+
+    ensure_publication_inputs(
+        voynich_path=args.input,
+        allow_placeholder_inputs=args.allow_placeholder_inputs,
+    )
 
     by_folio = load_folio_chars(args.input)
     folios = sorted(by_folio.keys())

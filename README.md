@@ -52,9 +52,9 @@ Once a character is written, the transition to the next is highly pre-determined
 ---
 
 ### 2. The Physical Grille Dimensions (Spatial Periodicity)
-We have programmatically reverse-engineered the physical dimensions of the c. 1420 stencil plate:
-*   **The 13-Word Stencil Length:** Repeating block-phrases are mathematically locked into a strict physical cycle of **exactly 13 words** (occurring 30 separate times in the corpus), pointing to a physical template of 13 word-slots.
-*   **The 5-to-6 Character Grille Window:** Character-level autocorrelation scans reveal a massive probability deviation spike at **exactly 6 characters (+3.33%)** and **5 characters (+2.07%)**, marking the physical horizontal cut-out window spacing of the stencil.
+Current historical-transcript readout supports a narrower claim boundary:
+*   **The 13-word spacing pattern is descriptive, not core:** repeated phrase offsets still show a 13-word count peak in raw scans, but robustness tests do not support it as a publication-grade theorem anchor.
+*   **The 5-to-6 Character Grille Window remains a candidate signal:** character-level scans show strong raw autocorrelation at lags 5 and 6, but only lag 5 remains robust across the stricter preprocessing panel.
 *   **The Vertical Column Match Rate (7.00%):** Across **191,323 line-to-line comparisons**, characters like `o` and `e` align directly on top of each other at identical column coordinates on consecutive lines. This is the direct physical footprint of a stencil grid being slid vertically down the page line-by-line.
 
 ---
@@ -76,14 +76,16 @@ To reproduce the analysis against a Takahashi/EVA transcript, clone this reposit
 git clone https://github.com/EvilTeddyG/Voynich-Debunked.git
 cd Voynich-Debunked
 
-# Optional but recommended: fetch transcript deterministically
-# (replace URL/hash with your chosen canonical source snapshot)
-python scripts/fetch_takahashi.py --url "<TRANSCRIPT_URL>" --output data/takahashi_eva.txt --sha256 "<EXPECTED_SHA256>"
+# Use a canonical historical transcript file directly.
+# Claim-facing scripts reject synthetic fallback transcripts by default, so
+# data/takahashi_eva.txt must contain real folio tags such as <f1r...> rather
+# than synthetic <fSIM...> lines.
+# Optional helper (network): python scripts/fetch_takahashi.py --url "<TRANSCRIPT_URL>" --output data/takahashi_eva.txt --sha256 "<EXPECTED_SHA256>"
 
 # Run the raw mathematical profiling & entropy audit
 python scripts/cryptanalysis_reset.py --input data/takahashi_eva.txt --json-out artifacts/cryptanalysis.json
 
-# Extract the 13-word, 6-character spatial periodicity and vertical alignment
+# Extract spatial periodicity and vertical alignment
 python scripts/stencil_periodicity.py --input data/takahashi_eva.txt --json-out artifacts/stencil_periodicity.json
 
 # Execute the automaton engine to generate the synthetic corpus
@@ -95,7 +97,9 @@ python scripts/significance_tests.py --input data/takahashi_eva.txt --permutatio
 # Hold-out folio cross-validation (bigram model scaffold)
 python scripts/cross_validate_markov.py --input data/takahashi_eva.txt --holdout-frac 0.2 --repeats 20 --seed 42 --json-out artifacts/cross_validation.json
 
-# Compare Voynich metrics against pseudo-script / medieval control corpora
+# Compare Voynich metrics against independent control corpora.
+# Current baseline source provenance is documented in data/baselines/SOURCES.md.
+# Scripts still support --allow-placeholder-inputs only for explicit demo runs.
 python scripts/baseline_benchmark.py --voynich data/takahashi_eva.txt --corpora-dir data/baselines --csv-out artifacts/baseline_benchmark.csv --json-out artifacts/baseline_benchmark.json
 
 # Class-aware comparison against labeled medieval control families
@@ -143,12 +147,11 @@ python scripts/foliogeometry_csv_to_json.py --csv data/astronomy/folio_geometry_
 ## 🧮 Formalization Layer (Lean 4)
 
 Core arithmetic and logical relationships are machine-checked in [voynich_proof.lean](voynich_proof.lean)
-using **Lean 4 + Mathlib4**. The theorem `mechanicalAutomatonHypothesis` formalizes a conjunction of three measured signals:
+using **Lean 4 + Mathlib4**. The theorem `mechanicalAutomatonHypothesis` now formalizes the two empirical signals that remain in-bounds after the historical robustness runs:
 
 ```lean
 theorem mechanicalAutomatonHypothesis :
     voynich_H1 < naturalLanguage_H1_lb               -- H₁ impossibility
-    ∧ voynich_stencil.width = voynich_phrasePeriod   -- 13-word stencil period
     ∧ baseline_colMatchRate < voynich_colMatchRate   -- column match anomaly
 ```
 
@@ -194,7 +197,7 @@ Status labels are intentionally conservative.
 Notes on current vulnerability profile:
 1. The entropy argument is the central claim axis.
 2. Positional binding is currently the hardest signal to explain under unconstrained semantic models.
-3. The 13-word periodicity claim remains the most statistically attackable component until full robustness diagnostics are complete (spectral views, variant tokenization checks, and false-positive characterization).
+3. The 13-word periodicity claim is now outside the core formal boundary and should be treated as exploratory descriptive structure only.
 
 Interpretation rule for control-family analysis:
 1. Compare Voynich against *family-conditioned* distributions, not only aggregate language baselines.

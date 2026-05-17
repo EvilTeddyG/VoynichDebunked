@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 """
 Fetch a Takahashi/EVA transcript file reproducibly.
 
@@ -22,6 +22,17 @@ import sys
 import urllib.request
 
 
+DEFAULT_HEADERS = {
+    "User-Agent": (
+        "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/124.0.0.0 Safari/537.36"
+    ),
+    "Accept": "text/plain,text/*;q=0.9,*/*;q=0.8",
+    "Accept-Language": "en-US,en;q=0.9",
+}
+
+
 def sha256_bytes(data: bytes) -> str:
     return hashlib.sha256(data).hexdigest()
 
@@ -35,20 +46,15 @@ def parse_args() -> argparse.Namespace:
         default=None,
         help="Optional expected SHA-256 for deterministic verification",
     )
-    parser.add_argument(
-        "--timeout",
-        type=int,
-        default=30,
-        help="HTTP timeout in seconds (default: 30)",
-    )
     return parser.parse_args()
 
 
 def main() -> int:
     args = parse_args()
+    request = urllib.request.Request(args.url, headers=DEFAULT_HEADERS)
 
     try:
-        with urllib.request.urlopen(args.url, timeout=args.timeout) as response:
+        with urllib.request.urlopen(request) as response:
             data = response.read()
     except Exception as exc:  # pragma: no cover
         print(f"ERROR: download failed: {exc}", file=sys.stderr)

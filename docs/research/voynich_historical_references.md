@@ -1,8 +1,8 @@
 ﻿# ðŸ“‘ Historical References: Contextual Evidence for a Veneto Scriptorium Fabrication
-## *Beinecke MS 408 â€” Three Independent Historical Corroborating Lines of Evidence*
+## *Beinecke MS 408 — Historical Corroboration for the Remaining Mechanical Signals*
 
 > **Companion document to:** [`voynich_historical_precedents.md`](voynich_historical_precedents.md)
-> The preceding document established the *technology* of physical stencil writing (*patrons*) in early 15th-century Northern Italian scriptoria. This document establishes three historical lines of corroborating evidence: (1) documented use-cases of layout patrons and pseudo-writing in the Veneto region during the manuscript's date range, (2) a surveyed record of deliberate hoax manuscript sales in the same collector market that likely acquired the Voynich codex, and (3) the most historically coherent production environment identified by cross-referencing dates, geography, stylistic ciphers, and illustration similarity.
+> The preceding document established the *technology* of physical stencil writing (*patrons*) in early 15th-century Northern Italian scriptoria. This document collects historical corroboration for the mechanical-generation hypothesis while keeping the current empirical boundary conservative.
 
 Citation key: numbered references in brackets map to [CITATIONS.md](../../CITATIONS.md).
 
@@ -17,11 +17,11 @@ By the start of the 13th century, secular manuscript workshops â€” staffed 
 Key structural features of these workshops that are directly relevant to the Voynich fabrication hypothesis:
 
 *   **Division of Labour:** Commercial scriptoria divided production into at least three specialist roles â€” parchment preparation (scraping, chalking, ruling), text inscription, and illumination. A skilled artisan whose sole task was *ruling the vellum* would naturally employ labour-saving stencil tools.[22][23]
-*   **Parchment Ruling Stencils:** Scribes used lead grid stencils (*rigatori*) to score horizontal lines on vellum at precise, repeating intervals. These are direct physical precursors to the 13-word-slot stencil identified in our spatial periodicity analysis. The ruling grid and the generative pseudo-script stencil require exactly the same physical tooling.[3][22][23]
+*   **Parchment Ruling Stencils:** Scribes used lead grid stencils (*rigatori*) to score horizontal lines on vellum at precise, repeating intervals. These are direct physical precursors to the layout-constrained production signals identified in our spatial periodicity analysis.[3][22][23]
 *   **Decorative Pseudo-Script (Filler Text):** Surviving illuminated manuscripts from the Veneto region in this period include luxury mock-up codices that incorporated entirely decorative, non-lexical "Eastern script" filler â€” uniform, aesthetically pleasing rows of letter-like marks modelled on Arabic, Syriac, or Hebrew scripts to create the impression of exotic, sacred knowledge. This was a known commercial practice for generating high-value collectibles.[22][23][26]
 *   **Pouncing for Pattern Duplication:** Scribes and illuminators used a technique called **pouncing** (*spolveratura*) â€” pricking a hole pattern into a master template with a needle and then dusting charcoal or chalk through the holes onto a new sheet to duplicate complex repeating designs instantly. This is the direct physical ancestor of the character-slot grille mechanism.[22][23]
 
-**Relevance to our spatial findings:** The 13-word stencil width, the 5-to-6 character slot spacing, and the 7.00% vertical column match rate are all physically consistent with ruling grid tools known to have been in commercial use in the Veneto at the time of the manuscript's production.[3][9][11][22]
+**Relevance to our spatial findings:** The candidate 5-to-6 character spacing and the 7.00% vertical column match rate are physically consistent with ruling grid tools known to have been in commercial use in the Veneto at the time of the manuscript's production. The 13-word spacing observation remains descriptive rather than core.[3][9][11][22]
 
 ---
 

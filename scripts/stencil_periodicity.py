@@ -11,6 +11,8 @@ import json
 import re
 from collections import defaultdict, Counter
 
+from corpus_provenance import ensure_publication_inputs
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Spatial periodicity and alignment audit")
@@ -23,6 +25,11 @@ def parse_args():
         "--json-out",
         default=None,
         help="Optional path to write machine-readable JSON results",
+    )
+    parser.add_argument(
+        "--allow-placeholder-inputs",
+        action="store_true",
+        help="Allow synthetic/demo transcript inputs instead of publication-grade corpora",
     )
     return parser.parse_args()
 
@@ -121,6 +128,11 @@ def analyze_character_autocorrelation(corpus, max_lag=100):
 
 def main():
     args = parse_args()
+
+    ensure_publication_inputs(
+        voynich_path=args.input,
+        allow_placeholder_inputs=args.allow_placeholder_inputs,
+    )
     input_file = args.input
     
     # Load and clean words

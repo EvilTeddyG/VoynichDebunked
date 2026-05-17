@@ -19,6 +19,8 @@ import re
 from collections import Counter, defaultdict
 from statistics import mean
 
+from corpus_provenance import ensure_publication_inputs
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Section-stratified null-calibrated lag spectra")
@@ -29,6 +31,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--permutations", type=int, default=200, help="Null permutations per profile")
     parser.add_argument("--min-section-chars", type=int, default=3000, help="Minimum chars needed to keep a section")
     parser.add_argument("--seed", type=int, default=42, help="RNG seed")
+    parser.add_argument(
+        "--allow-placeholder-inputs",
+        action="store_true",
+        help="Allow synthetic/demo transcript or control inputs instead of publication-grade corpora",
+    )
     parser.add_argument("--csv-out", default="artifacts/section_lag_spectrum_compare.csv", help="Output long CSV")
     parser.add_argument("--json-out", default="artifacts/section_lag_spectrum_compare.json", help="Output summary JSON")
     return parser.parse_args()
@@ -206,6 +213,12 @@ def build_profile_stats(chars: list[str], max_lag: int, target_lags: list[int], 
 def main() -> int:
     args = parse_args()
     random.seed(args.seed)
+
+    ensure_publication_inputs(
+        voynich_path=args.voynich,
+        manifest_path=args.manifest,
+        allow_placeholder_inputs=args.allow_placeholder_inputs,
+    )
 
     global_chars, by_section_chars = extract_voynich_section_chars(args.voynich)
     if not global_chars:

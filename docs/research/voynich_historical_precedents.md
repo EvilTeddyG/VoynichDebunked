@@ -42,8 +42,8 @@ Our empirical cryptanalysis of Beinecke MS 408 captured the exact physical measu
 
 *   **The 5-to-6 Character Slot Width (Lag 6 Spike):** 
     The cut-out windows in the physical *patron* sheet were spaced at intervals of **5 to 6 characters wide**. When the scribe traced inside these windows, characters were physically forced to align at this horizontal repetition frequency.
-*   **The 13-Word Stencil Template Length (Word Offset 13):**
-    The physical length of the *patron* stencil was exactly **13 word slots**. Scribes wrote a sequence of 13 rolling words, shifted the stencil template laterally or down, and repeated the mechanical sequence.
+*   **The 13-Word Spacing Pattern (Word Offset 13):**
+    A descriptive 13-word spacing count remains visible in raw duplicate-offset scans, but the historical robustness runs do not support it as a closed measurement of exact stencil width.
 *   **The Vertical Slide (7.00% Column Matching):**
     The scribe used a vertical lead line-guide to slide the *patron* sheet vertically down the page line-by-line. This mechanical vertical alignment caused letters on consecutive lines to align directly on top of each other in identical columns, producing a vertical match rate **400% higher than random natural text**.
 

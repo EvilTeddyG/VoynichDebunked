@@ -13,6 +13,8 @@ import re
 import math
 from collections import defaultdict, Counter
 
+from corpus_provenance import ensure_publication_inputs
+
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Entropy and line-effect audit for a Takahashi/EVA transcript")
@@ -25,6 +27,11 @@ def parse_args():
         "--json-out",
         default=None,
         help="Optional path to write machine-readable JSON results",
+    )
+    parser.add_argument(
+        "--allow-placeholder-inputs",
+        action="store_true",
+        help="Allow synthetic/demo transcript inputs instead of publication-grade corpora",
     )
     return parser.parse_args()
 
@@ -114,6 +121,11 @@ def analyze_line_effect(input_file):
 def main():
     args = parse_args()
     input_file = args.input
+
+    ensure_publication_inputs(
+        voynich_path=input_file,
+        allow_placeholder_inputs=args.allow_placeholder_inputs,
+    )
     
     # 1. Load entire cleaned corpus
     corpus = ""

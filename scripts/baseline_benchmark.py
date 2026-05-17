@@ -25,6 +25,8 @@ import re
 from collections import Counter, defaultdict
 from statistics import mean
 
+from corpus_provenance import ensure_publication_inputs
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run metric panel across comparison corpora")
@@ -32,6 +34,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--corpora-dir", required=True, help="Directory containing comparison corpora")
     parser.add_argument("--lags", nargs="+", type=int, default=[5, 6, 12, 13], help="Lags for autocorrelation scores")
     parser.add_argument("--min-word-count", type=int, default=20, help="Min word count for polarization stats")
+    parser.add_argument(
+        "--allow-placeholder-inputs",
+        action="store_true",
+        help="Allow synthetic/demo transcript or control inputs instead of publication-grade corpora",
+    )
     parser.add_argument("--csv-out", default="artifacts/baseline_benchmark.csv", help="Output CSV path")
     parser.add_argument("--json-out", default=None, help="Optional JSON output path")
     return parser.parse_args()
@@ -146,6 +153,12 @@ def compute_metrics(path: str, voynich_mode: bool, lags: list[int], min_word_cou
 
 def main() -> int:
     args = parse_args()
+
+    ensure_publication_inputs(
+        voynich_path=args.voynich,
+        corpora_dir=args.corpora_dir,
+        allow_placeholder_inputs=args.allow_placeholder_inputs,
+    )
 
     rows = []
     rows.append(

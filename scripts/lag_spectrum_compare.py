@@ -22,6 +22,8 @@ import re
 from collections import Counter
 from statistics import mean
 
+from corpus_provenance import ensure_publication_inputs
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Null-calibrated lag spectra for Voynich + controls")
@@ -41,6 +43,11 @@ def parse_args() -> argparse.Namespace:
         help="Store null sample arrays for target lags in JSON (larger file, enables histogram plots)",
     )
     parser.add_argument("--seed", type=int, default=42, help="RNG seed")
+    parser.add_argument(
+        "--allow-placeholder-inputs",
+        action="store_true",
+        help="Allow synthetic/demo transcript or control inputs instead of publication-grade corpora",
+    )
     parser.add_argument("--csv-out", default="artifacts/lag_spectrum_compare.csv", help="Output long CSV")
     parser.add_argument("--json-out", default="artifacts/lag_spectrum_compare.json", help="Output summary JSON")
     return parser.parse_args()
@@ -132,6 +139,12 @@ def rank_lag(profile: dict[int, float], lag: int) -> int:
 def main() -> int:
     args = parse_args()
     random.seed(args.seed)
+
+    ensure_publication_inputs(
+        voynich_path=args.voynich,
+        manifest_path=args.manifest,
+        allow_placeholder_inputs=args.allow_placeholder_inputs,
+    )
 
     corpora = [{"label": "voynich", "family": "voynich", "path": args.voynich, "voynich_mode": True}]
     for row in read_manifest(args.manifest):

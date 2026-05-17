@@ -23,6 +23,8 @@ import re
 from collections import Counter, defaultdict
 from statistics import mean
 
+from corpus_provenance import ensure_publication_inputs
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Robustness audit for periodicity claims")
@@ -33,6 +35,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-char-lag", type=int, default=60, help="Maximum char lag for autocorrelation")
     parser.add_argument("--permutations", type=int, default=400, help="Null permutations per variant")
     parser.add_argument("--seed", type=int, default=42, help="RNG seed")
+    parser.add_argument(
+        "--allow-placeholder-inputs",
+        action="store_true",
+        help="Allow synthetic/demo transcript inputs instead of publication-grade corpora",
+    )
     parser.add_argument("--json-out", default="artifacts/periodicity_robustness.json", help="Output JSON path")
     return parser.parse_args()
 
@@ -258,6 +265,11 @@ def evaluate_variant(
 def main() -> int:
     args = parse_args()
     random.seed(args.seed)
+
+    ensure_publication_inputs(
+        voynich_path=args.input,
+        allow_placeholder_inputs=args.allow_placeholder_inputs,
+    )
 
     lines = read_takahashi_lines(args.input)
 

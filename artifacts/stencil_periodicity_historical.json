@@ -1,0 +1,1771 @@
+{
+  "input_file": "data/takahashi_eva.txt",
+  "word_count": 37886,
+  "top_repeated_phrases": [
+    {
+      "phrase": [
+        "ol",
+        "Shedy",
+        "qokedy"
+      ],
+      "count": 5,
+      "positions": [
+        15178,
+        19419,
+        20794,
+        20840,
+        21200
+      ]
+    },
+    {
+      "phrase": [
+        "ol",
+        "s",
+        "aiin"
+      ],
+      "count": 4,
+      "positions": [
+        9728,
+        17150,
+        21540,
+        25114
+      ]
+    },
+    {
+      "phrase": [
+        "o",
+        "l",
+        "d"
+      ],
+      "count": 4,
+      "positions": [
+        10082,
+        10095,
+        10108,
+        10121
+      ]
+    },
+    {
+      "phrase": [
+        "l",
+        "d",
+        "r"
+      ],
+      "count": 4,
+      "positions": [
+        10083,
+        10096,
+        10109,
+        10122
+      ]
+    },
+    {
+      "phrase": [
+        "d",
+        "r",
+        "v"
+      ],
+      "count": 4,
+      "positions": [
+        10084,
+        10097,
+        10110,
+        10123
+      ]
+    },
+    {
+      "phrase": [
+        "r",
+        "v",
+        "x"
+      ],
+      "count": 4,
+      "positions": [
+        10085,
+        10098,
+        10111,
+        10124
+      ]
+    },
+    {
+      "phrase": [
+        "v",
+        "x",
+        "k"
+      ],
+      "count": 4,
+      "positions": [
+        10086,
+        10099,
+        10112,
+        10125
+      ]
+    },
+    {
+      "phrase": [
+        "t",
+        "r",
+        "y"
+      ],
+      "count": 4,
+      "positions": [
+        10091,
+        10104,
+        10117,
+        10130
+      ]
+    },
+    {
+      "phrase": [
+        "r",
+        "y",
+        "c"
+      ],
+      "count": 4,
+      "positions": [
+        10092,
+        10105,
+        10118,
+        10131
+      ]
+    },
+    {
+      "phrase": [
+        "chey",
+        "qol",
+        "chedy"
+      ],
+      "count": 4,
+      "positions": [
+        19487,
+        19676,
+        28657,
+        33683
+      ]
+    },
+    {
+      "phrase": [
+        "r",
+        "ol",
+        "dain"
+      ],
+      "count": 3,
+      "positions": [
+        5075,
+        18387,
+        33539
+      ]
+    },
+    {
+      "phrase": [
+        "or",
+        "aiin",
+        "okaiin"
+      ],
+      "count": 3,
+      "positions": [
+        6416,
+        9722,
+        30813
+      ]
+    },
+    {
+      "phrase": [
+        "or",
+        "or",
+        "aiin"
+      ],
+      "count": 3,
+      "positions": [
+        9721,
+        18196,
+        21820
+      ]
+    },
+    {
+      "phrase": [
+        "x",
+        "k",
+        "k"
+      ],
+      "count": 3,
+      "positions": [
+        10087,
+        10113,
+        10126
+      ]
+    },
+    {
+      "phrase": [
+        "y",
+        "c",
+        "o"
+      ],
+      "count": 3,
+      "positions": [
+        10093,
+        10106,
+        10119
+      ]
+    },
+    {
+      "phrase": [
+        "c",
+        "o",
+        "l"
+      ],
+      "count": 3,
+      "positions": [
+        10094,
+        10107,
+        10120
+      ]
+    },
+    {
+      "phrase": [
+        "qokedy",
+        "qokedy",
+        "qokedy"
+      ],
+      "count": 3,
+      "positions": [
+        14616,
+        14617,
+        18021
+      ]
+    },
+    {
+      "phrase": [
+        "Shedy",
+        "qokedy",
+        "qokeedy"
+      ],
+      "count": 3,
+      "positions": [
+        15179,
+        20758,
+        20841
+      ]
+    },
+    {
+      "phrase": [
+        "Sheedy",
+        "qokedy",
+        "chedy"
+      ],
+      "count": 3,
+      "positions": [
+        15487,
+        16613,
+        21028
+      ]
+    },
+    {
+      "phrase": [
+        "ol",
+        "chedy",
+        "qokain"
+      ],
+      "count": 3,
+      "positions": [
+        17014,
+        18293,
+        18928
+      ]
+    },
+    {
+      "phrase": [
+        "or",
+        "aiin",
+        "ol"
+      ],
+      "count": 3,
+      "positions": [
+        17603,
+        22071,
+        22168
+      ]
+    },
+    {
+      "phrase": [
+        "Shedy",
+        "qokedy",
+        "Shedy"
+      ],
+      "count": 3,
+      "positions": [
+        20465,
+        20795,
+        21295
+      ]
+    },
+    {
+      "phrase": [
+        "chedy",
+        "qokeey",
+        "qokeey"
+      ],
+      "count": 3,
+      "positions": [
+        27720,
+        32634,
+        34410
+      ]
+    },
+    {
+      "phrase": [
+        "chol",
+        "chol",
+        "kor"
+      ],
+      "count": 2,
+      "positions": [
+        113,
+        4580
+      ]
+    },
+    {
+      "phrase": [
+        "dar",
+        "Shey",
+        "cThar"
+      ],
+      "count": 2,
+      "positions": [
+        174,
+        1437
+      ]
+    },
+    {
+      "phrase": [
+        "chol",
+        "daiin",
+        "cThy"
+      ],
+      "count": 2,
+      "positions": [
+        472,
+        2370
+      ]
+    },
+    {
+      "phrase": [
+        "chol",
+        "chy",
+        "chaiin"
+      ],
+      "count": 2,
+      "positions": [
+        677,
+        8058
+      ]
+    },
+    {
+      "phrase": [
+        "cho",
+        "s",
+        "chol"
+      ],
+      "count": 2,
+      "positions": [
+        954,
+        24768
+      ]
+    },
+    {
+      "phrase": [
+        "chol",
+        "chol",
+        "chol"
+      ],
+      "count": 2,
+      "positions": [
+        1444,
+        8088
+      ]
+    },
+    {
+      "phrase": [
+        "cThor",
+        "chol",
+        "chor"
+      ],
+      "count": 2,
+      "positions": [
+        1603,
+        2374
+      ]
+    },
+    {
+      "phrase": [
+        "yty",
+        "dy",
+        "dy"
+      ],
+      "count": 2,
+      "positions": [
+        1699,
+        12217
+      ]
+    },
+    {
+      "phrase": [
+        "chaiin",
+        "chcThy",
+        "cTho"
+      ],
+      "count": 2,
+      "positions": [
+        1703,
+        7597
+      ]
+    },
+    {
+      "phrase": [
+        "daiin",
+        "qotchy",
+        "qotor"
+      ],
+      "count": 2,
+      "positions": [
+        1763,
+        1799
+      ]
+    },
+    {
+      "phrase": [
+        "daiin",
+        "cThy",
+        "dy"
+      ],
+      "count": 2,
+      "positions": [
+        1856,
+        2243
+      ]
+    },
+    {
+      "phrase": [
+        "daiin",
+        "cThor",
+        "chol"
+      ],
+      "count": 2,
+      "positions": [
+        2373,
+        2951
+      ]
+    },
+    {
+      "phrase": [
+        "ykeey",
+        "okeey",
+        "cheor"
+      ],
+      "count": 2,
+      "positions": [
+        2712,
+        17765
+      ]
+    },
+    {
+      "phrase": [
+        "chol",
+        "daiin",
+        "qotol"
+      ],
+      "count": 2,
+      "positions": [
+        2979,
+        9019
+      ]
+    },
+    {
+      "phrase": [
+        "Sho",
+        "cThy",
+        "daiin"
+      ],
+      "count": 2,
+      "positions": [
+        3181,
+        3348
+      ]
+    },
+    {
+      "phrase": [
+        "chor",
+        "chol",
+        "daiin"
+      ],
+      "count": 2,
+      "positions": [
+        3308,
+        5175
+      ]
+    },
+    {
+      "phrase": [
+        "chol",
+        "daiin",
+        "chkaiin"
+      ],
+      "count": 2,
+      "positions": [
+        3309,
+        4461
+      ]
+    },
+    {
+      "phrase": [
+        "r",
+        "ol",
+        "daiin"
+      ],
+      "count": 2,
+      "positions": [
+        3617,
+        11277
+      ]
+    },
+    {
+      "phrase": [
+        "chy",
+        "daiin",
+        "chey"
+      ],
+      "count": 2,
+      "positions": [
+        4234,
+        5109
+      ]
+    },
+    {
+      "phrase": [
+        "okedy",
+        "okedy",
+        "qokedy"
+      ],
+      "count": 2,
+      "positions": [
+        4878,
+        21172
+      ]
+    },
+    {
+      "phrase": [
+        "or",
+        "aiin",
+        "otaiin"
+      ],
+      "count": 2,
+      "positions": [
+        5228,
+        35634
+      ]
+    },
+    {
+      "phrase": [
+        "aiin",
+        "okal",
+        "otal"
+      ],
+      "count": 2,
+      "positions": [
+        5233,
+        10370
+      ]
+    },
+    {
+      "phrase": [
+        "aiin",
+        "or",
+        "aiin"
+      ],
+      "count": 2,
+      "positions": [
+        5250,
+        22001
+      ]
+    },
+    {
+      "phrase": [
+        "qokchdy",
+        "s",
+        "ar"
+      ],
+      "count": 2,
+      "positions": [
+        5431,
+        7850
+      ]
+    },
+    {
+      "phrase": [
+        "daiin",
+        "daiin",
+        "dal"
+      ],
+      "count": 2,
+      "positions": [
+        5764,
+        11197
+      ]
+    },
+    {
+      "phrase": [
+        "daiin",
+        "dal",
+        "s"
+      ],
+      "count": 2,
+      "positions": [
+        5765,
+        7148
+      ]
+    },
+    {
+      "phrase": [
+        "daiin",
+        "daiin",
+        "ody"
+      ],
+      "count": 2,
+      "positions": [
+        6081,
+        23898
+      ]
+    },
+    {
+      "phrase": [
+        "chor",
+        "d",
+        "aiin"
+      ],
+      "count": 2,
+      "positions": [
+        6149,
+        8644
+      ]
+    },
+    {
+      "phrase": [
+        "dar",
+        "ar",
+        "al"
+      ],
+      "count": 2,
+      "positions": [
+        6274,
+        36582
+      ]
+    },
+    {
+      "phrase": [
+        "or",
+        "aiin",
+        "dol"
+      ],
+      "count": 2,
+      "positions": [
+        6370,
+        25973
+      ]
+    },
+    {
+      "phrase": [
+        "saiin",
+        "or",
+        "aiin"
+      ],
+      "count": 2,
+      "positions": [
+        6392,
+        34422
+      ]
+    },
+    {
+      "phrase": [
+        "Shy",
+        "qokal",
+        "chdy"
+      ],
+      "count": 2,
+      "positions": [
+        6524,
+        13158
+      ]
+    },
+    {
+      "phrase": [
+        "choky",
+        "chol",
+        "dam"
+      ],
+      "count": 2,
+      "positions": [
+        7502,
+        36292
+      ]
+    },
+    {
+      "phrase": [
+        "dor",
+        "chol",
+        "chy"
+      ],
+      "count": 2,
+      "positions": [
+        8057,
+        26331
+      ]
+    },
+    {
+      "phrase": [
+        "p",
+        "o",
+        "y"
+      ],
+      "count": 2,
+      "positions": [
+        8545,
+        8549
+      ]
+    },
+    {
+      "phrase": [
+        "o",
+        "y",
+        "e"
+      ],
+      "count": 2,
+      "positions": [
+        8546,
+        8550
+      ]
+    },
+    {
+      "phrase": [
+        "o",
+        "aiin",
+        "or"
+      ],
+      "count": 2,
+      "positions": [
+        9392,
+        36711
+      ]
+    },
+    {
+      "phrase": [
+        "or",
+        "aiin",
+        "chody"
+      ],
+      "count": 2,
+      "positions": [
+        9538,
+        22889
+      ]
+    },
+    {
+      "phrase": [
+        "chol",
+        "chol",
+        "daiin"
+      ],
+      "count": 2,
+      "positions": [
+        9935,
+        9940
+      ]
+    },
+    {
+      "phrase": [
+        "d",
+        "o",
+        "l"
+      ],
+      "count": 2,
+      "positions": [
+        10073,
+        12669
+      ]
+    },
+    {
+      "phrase": [
+        "f",
+        "t",
+        "r"
+      ],
+      "count": 2,
+      "positions": [
+        10090,
+        10103
+      ]
+    },
+    {
+      "phrase": [
+        "k",
+        "k",
+        "p"
+      ],
+      "count": 2,
+      "positions": [
+        10114,
+        10127
+      ]
+    },
+    {
+      "phrase": [
+        "k",
+        "p",
+        "t"
+      ],
+      "count": 2,
+      "positions": [
+        10115,
+        10128
+      ]
+    },
+    {
+      "phrase": [
+        "p",
+        "t",
+        "r"
+      ],
+      "count": 2,
+      "positions": [
+        10116,
+        10129
+      ]
+    },
+    {
+      "phrase": [
+        "qoky",
+        "dar",
+        "al"
+      ],
+      "count": 2,
+      "positions": [
+        10498,
+        37502
+      ]
+    },
+    {
+      "phrase": [
+        "aiin",
+        "al",
+        "y"
+      ],
+      "count": 2,
+      "positions": [
+        10826,
+        13730
+      ]
+    },
+    {
+      "phrase": [
+        "o",
+        "l",
+        "r"
+      ],
+      "count": 2,
+      "positions": [
+        11024,
+        33537
+      ]
+    },
+    {
+      "phrase": [
+        "dal",
+        "choekeey",
+        "dal"
+      ],
+      "count": 2,
+      "positions": [
+        12857,
+        12859
+      ]
+    },
+    {
+      "phrase": [
+        "okeeor",
+        "cheey",
+        "okeey"
+      ],
+      "count": 2,
+      "positions": [
+        14120,
+        27044
+      ]
+    },
+    {
+      "phrase": [
+        "ol",
+        "Sheedy",
+        "qokeey"
+      ],
+      "count": 2,
+      "positions": [
+        14543,
+        19118
+      ]
+    },
+    {
+      "phrase": [
+        "Shedy",
+        "qol",
+        "otain"
+      ],
+      "count": 2,
+      "positions": [
+        14665,
+        19200
+      ]
+    },
+    {
+      "phrase": [
+        "Shey",
+        "qokain",
+        "chedy"
+      ],
+      "count": 2,
+      "positions": [
+        14697,
+        33762
+      ]
+    },
+    {
+      "phrase": [
+        "dy",
+        "qokeedy",
+        "lchedy"
+      ],
+      "count": 2,
+      "positions": [
+        14724,
+        19628
+      ]
+    },
+    {
+      "phrase": [
+        "Shedy",
+        "qokar",
+        "Shedy"
+      ],
+      "count": 2,
+      "positions": [
+        14799,
+        15554
+      ]
+    },
+    {
+      "phrase": [
+        "otar",
+        "dar",
+        "dar"
+      ],
+      "count": 2,
+      "positions": [
+        14834,
+        20848
+      ]
+    },
+    {
+      "phrase": [
+        "okal",
+        "dal",
+        "olchedy"
+      ],
+      "count": 2,
+      "positions": [
+        14940,
+        17239
+      ]
+    },
+    {
+      "phrase": [
+        "ShecKhy",
+        "qokedy",
+        "qokedy"
+      ],
+      "count": 2,
+      "positions": [
+        15009,
+        15166
+      ]
+    },
+    {
+      "phrase": [
+        "Shedy",
+        "qokain",
+        "Shey"
+      ],
+      "count": 2,
+      "positions": [
+        15107,
+        36782
+      ]
+    },
+    {
+      "phrase": [
+        "qokain",
+        "ol",
+        "chedy"
+      ],
+      "count": 2,
+      "positions": [
+        15143,
+        21334
+      ]
+    },
+    {
+      "phrase": [
+        "ol",
+        "chedy",
+        "qol"
+      ],
+      "count": 2,
+      "positions": [
+        15144,
+        21191
+      ]
+    },
+    {
+      "phrase": [
+        "chedy",
+        "qol",
+        "chedy"
+      ],
+      "count": 2,
+      "positions": [
+        15145,
+        16447
+      ]
+    },
+    {
+      "phrase": [
+        "qol",
+        "chedy",
+        "qol"
+      ],
+      "count": 2,
+      "positions": [
+        15146,
+        17286
+      ]
+    },
+    {
+      "phrase": [
+        "qokain",
+        "olShey",
+        "qokain"
+      ],
+      "count": 2,
+      "positions": [
+        15174,
+        18930
+      ]
+    },
+    {
+      "phrase": [
+        "Shey",
+        "okain",
+        "chedy"
+      ],
+      "count": 2,
+      "positions": [
+        15198,
+        37760
+      ]
+    },
+    {
+      "phrase": [
+        "qol",
+        "chey",
+        "qokey"
+      ],
+      "count": 2,
+      "positions": [
+        15229,
+        15263
+      ]
+    },
+    {
+      "phrase": [
+        "qokedy",
+        "lkedy",
+        "chdy"
+      ],
+      "count": 2,
+      "positions": [
+        15332,
+        16001
+      ]
+    },
+    {
+      "phrase": [
+        "qokar",
+        "Shedy",
+        "Shedy"
+      ],
+      "count": 2,
+      "positions": [
+        15458,
+        15552
+      ]
+    },
+    {
+      "phrase": [
+        "chedy",
+        "qokain",
+        "chcKhy"
+      ],
+      "count": 2,
+      "positions": [
+        15490,
+        19021
+      ]
+    },
+    {
+      "phrase": [
+        "dal",
+        "chdy",
+        "dal"
+      ],
+      "count": 2,
+      "positions": [
+        15548,
+        24370
+      ]
+    },
+    {
+      "phrase": [
+        "qokar",
+        "Shedy",
+        "qokain"
+      ],
+      "count": 2,
+      "positions": [
+        15555,
+        20669
+      ]
+    },
+    {
+      "phrase": [
+        "daiin",
+        "chey",
+        "lchedy"
+      ],
+      "count": 2,
+      "positions": [
+        15687,
+        20136
+      ]
+    },
+    {
+      "phrase": [
+        "qokedy",
+        "qokeedy",
+        "qokedy"
+      ],
+      "count": 2,
+      "positions": [
+        15792,
+        20759
+      ]
+    },
+    {
+      "phrase": [
+        "qol",
+        "Shedy",
+        "ol"
+      ],
+      "count": 2,
+      "positions": [
+        15801,
+        20858
+      ]
+    },
+    {
+      "phrase": [
+        "Sheey",
+        "or",
+        "or"
+      ],
+      "count": 2,
+      "positions": [
+        15822,
+        18195
+      ]
+    },
+    {
+      "phrase": [
+        "ol",
+        "Shedy",
+        "qokeey"
+      ],
+      "count": 2,
+      "positions": [
+        15832,
+        21362
+      ]
+    },
+    {
+      "phrase": [
+        "qoteedy",
+        "qokaiin",
+        "Shedy"
+      ],
+      "count": 2,
+      "positions": [
+        16264,
+        16294
+      ]
+    },
+    {
+      "phrase": [
+        "Shedy",
+        "qokeedy",
+        "qotedy"
+      ],
+      "count": 2,
+      "positions": [
+        16296,
+        16402
+      ]
+    }
+  ],
+  "distance_histogram_top": [
+    {
+      "distance": 13,
+      "frequency": 30
+    },
+    {
+      "distance": 4,
+      "frequency": 2
+    },
+    {
+      "distance": 1331,
+      "frequency": 2
+    },
+    {
+      "distance": 4467,
+      "frequency": 1
+    },
+    {
+      "distance": 1263,
+      "frequency": 1
+    },
+    {
+      "distance": 1898,
+      "frequency": 1
+    },
+    {
+      "distance": 7381,
+      "frequency": 1
+    },
+    {
+      "distance": 23814,
+      "frequency": 1
+    },
+    {
+      "distance": 6644,
+      "frequency": 1
+    },
+    {
+      "distance": 771,
+      "frequency": 1
+    },
+    {
+      "distance": 10518,
+      "frequency": 1
+    },
+    {
+      "distance": 5894,
+      "frequency": 1
+    },
+    {
+      "distance": 36,
+      "frequency": 1
+    },
+    {
+      "distance": 387,
+      "frequency": 1
+    },
+    {
+      "distance": 578,
+      "frequency": 1
+    },
+    {
+      "distance": 15053,
+      "frequency": 1
+    },
+    {
+      "distance": 6040,
+      "frequency": 1
+    },
+    {
+      "distance": 167,
+      "frequency": 1
+    },
+    {
+      "distance": 1867,
+      "frequency": 1
+    },
+    {
+      "distance": 1152,
+      "frequency": 1
+    },
+    {
+      "distance": 7660,
+      "frequency": 1
+    },
+    {
+      "distance": 875,
+      "frequency": 1
+    },
+    {
+      "distance": 16294,
+      "frequency": 1
+    },
+    {
+      "distance": 13312,
+      "frequency": 1
+    },
+    {
+      "distance": 15152,
+      "frequency": 1
+    },
+    {
+      "distance": 30406,
+      "frequency": 1
+    },
+    {
+      "distance": 5137,
+      "frequency": 1
+    },
+    {
+      "distance": 16751,
+      "frequency": 1
+    },
+    {
+      "distance": 2419,
+      "frequency": 1
+    },
+    {
+      "distance": 5433,
+      "frequency": 1
+    },
+    {
+      "distance": 1383,
+      "frequency": 1
+    },
+    {
+      "distance": 17817,
+      "frequency": 1
+    },
+    {
+      "distance": 2495,
+      "frequency": 1
+    },
+    {
+      "distance": 30308,
+      "frequency": 1
+    },
+    {
+      "distance": 19603,
+      "frequency": 1
+    },
+    {
+      "distance": 28030,
+      "frequency": 1
+    },
+    {
+      "distance": 3306,
+      "frequency": 1
+    },
+    {
+      "distance": 21091,
+      "frequency": 1
+    },
+    {
+      "distance": 6634,
+      "frequency": 1
+    },
+    {
+      "distance": 28790,
+      "frequency": 1
+    },
+    {
+      "distance": 18274,
+      "frequency": 1
+    },
+    {
+      "distance": 27319,
+      "frequency": 1
+    },
+    {
+      "distance": 13351,
+      "frequency": 1
+    },
+    {
+      "distance": 8475,
+      "frequency": 1
+    },
+    {
+      "distance": 3624,
+      "frequency": 1
+    },
+    {
+      "distance": 7422,
+      "frequency": 1
+    },
+    {
+      "distance": 4390,
+      "frequency": 1
+    },
+    {
+      "distance": 3574,
+      "frequency": 1
+    },
+    {
+      "distance": 5,
+      "frequency": 1
+    },
+    {
+      "distance": 2596,
+      "frequency": 1
+    }
+  ],
+  "vertical_alignment": {
+    "total_comparisons": 191323,
+    "total_matches": 13402,
+    "match_rate": 7.004907930567679,
+    "top_chars": [
+      {
+        "char": "o",
+        "count": 2706
+      },
+      {
+        "char": "e",
+        "count": 2255
+      },
+      {
+        "char": "h",
+        "count": 1557
+      },
+      {
+        "char": "y",
+        "count": 1308
+      },
+      {
+        "char": "a",
+        "count": 1008
+      },
+      {
+        "char": "c",
+        "count": 865
+      },
+      {
+        "char": "i",
+        "count": 803
+      },
+      {
+        "char": "d",
+        "count": 758
+      },
+      {
+        "char": "l",
+        "count": 505
+      },
+      {
+        "char": "k",
+        "count": 431
+      },
+      {
+        "char": "r",
+        "count": 277
+      },
+      {
+        "char": "n",
+        "count": 221
+      },
+      {
+        "char": "t",
+        "count": 215
+      },
+      {
+        "char": "q",
+        "count": 175
+      },
+      {
+        "char": "S",
+        "count": 158
+      },
+      {
+        "char": "s",
+        "count": 95
+      },
+      {
+        "char": "m",
+        "count": 30
+      },
+      {
+        "char": "T",
+        "count": 18
+      },
+      {
+        "char": "p",
+        "count": 12
+      },
+      {
+        "char": "K",
+        "count": 4
+      }
+    ]
+  },
+  "autocorrelation_top": [
+    {
+      "lag": 6,
+      "score": 0.033325167426972085
+    },
+    {
+      "lag": 5,
+      "score": 0.020700604259950448
+    },
+    {
+      "lag": 12,
+      "score": 0.01723213371512057
+    },
+    {
+      "lag": 7,
+      "score": 0.016561438187924604
+    },
+    {
+      "lag": 11,
+      "score": 0.015534822867032963
+    },
+    {
+      "lag": 13,
+      "score": 0.013974676663440488
+    },
+    {
+      "lag": 19,
+      "score": 0.011408637959156809
+    },
+    {
+      "lag": 23,
+      "score": 0.01095097591473071
+    },
+    {
+      "lag": 31,
+      "score": 0.010761389976149172
+    },
+    {
+      "lag": 58,
+      "score": 0.010695219224686026
+    },
+    {
+      "lag": 26,
+      "score": 0.01061293824984856
+    },
+    {
+      "lag": 38,
+      "score": 0.01037813430735958
+    },
+    {
+      "lag": 32,
+      "score": 0.010323227894378603
+    },
+    {
+      "lag": 16,
+      "score": 0.010321279191317118
+    },
+    {
+      "lag": 48,
+      "score": 0.010267734769936254
+    },
+    {
+      "lag": 17,
+      "score": 0.010248630936874364
+    },
+    {
+      "lag": 21,
+      "score": 0.010219094220323618
+    },
+    {
+      "lag": 44,
+      "score": 0.010177170823457288
+    },
+    {
+      "lag": 42,
+      "score": 0.010165832295969776
+    },
+    {
+      "lag": 37,
+      "score": 0.010153152155291764
+    },
+    {
+      "lag": 40,
+      "score": 0.010149272209536597
+    },
+    {
+      "lag": 41,
+      "score": 0.010076613952351932
+    },
+    {
+      "lag": 24,
+      "score": 0.009907155418909436
+    },
+    {
+      "lag": 53,
+      "score": 0.009883535210128719
+    },
+    {
+      "lag": 20,
+      "score": 0.009811389101210627
+    },
+    {
+      "lag": 28,
+      "score": 0.009794066993324566
+    },
+    {
+      "lag": 10,
+      "score": 0.009723399165533164
+    },
+    {
+      "lag": 18,
+      "score": 0.00971651667870102
+    },
+    {
+      "lag": 46,
+      "score": 0.009692423446340137
+    },
+    {
+      "lag": 27,
+      "score": 0.009579542520894352
+    },
+    {
+      "lag": 36,
+      "score": 0.009567875969858947
+    },
+    {
+      "lag": 54,
+      "score": 0.009544539577848912
+    },
+    {
+      "lag": 51,
+      "score": 0.009527540898253598
+    },
+    {
+      "lag": 14,
+      "score": 0.009485009082320778
+    },
+    {
+      "lag": 45,
+      "score": 0.009425660019356616
+    },
+    {
+      "lag": 60,
+      "score": 0.009322643817349915
+    },
+    {
+      "lag": 34,
+      "score": 0.009311127566687671
+    },
+    {
+      "lag": 29,
+      "score": 0.009230590823766358
+    },
+    {
+      "lag": 15,
+      "score": 0.009172185967680671
+    },
+    {
+      "lag": 59,
+      "score": 0.009123752898495721
+    },
+    {
+      "lag": 22,
+      "score": 0.00910740383816648
+    },
+    {
+      "lag": 52,
+      "score": 0.009084104487443775
+    },
+    {
+      "lag": 50,
+      "score": 0.00899966794394777
+    },
+    {
+      "lag": 55,
+      "score": 0.008871319296807997
+    },
+    {
+      "lag": 56,
+      "score": 0.008709870728812935
+    },
+    {
+      "lag": 47,
+      "score": 0.00866413696954843
+    },
+    {
+      "lag": 39,
+      "score": 0.008550963785173366
+    },
+    {
+      "lag": 49,
+      "score": 0.008456134379216176
+    },
+    {
+      "lag": 33,
+      "score": 0.008402125441643482
+    },
+    {
+      "lag": 35,
+      "score": 0.008361228422890818
+    },
+    {
+      "lag": 43,
+      "score": 0.00828118184676399
+    },
+    {
+      "lag": 25,
+      "score": 0.008273307314269271
+    },
+    {
+      "lag": 30,
+      "score": 0.007795114409045428
+    },
+    {
+      "lag": 57,
+      "score": 0.007718081236597368
+    },
+    {
+      "lag": 8,
+      "score": 0.007148594013076326
+    },
+    {
+      "lag": 9,
+      "score": 0.0021003662774961157
+    },
+    {
+      "lag": 4,
+      "score": 0.0006626165474076656
+    },
+    {
+      "lag": 1,
+      "score": -0.017334441566557453
+    },
+    {
+      "lag": 2,
+      "score": -0.03289200216964746
+    },
+    {
+      "lag": 3,
+      "score": -0.03484957485949236
+    }
+  ]
+}

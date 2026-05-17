@@ -30,6 +30,8 @@ import re
 from collections import Counter, defaultdict
 from statistics import mean
 
+from corpus_provenance import ensure_publication_inputs
+
 
 DEFAULT_LAGS = [5, 6, 12, 13]
 
@@ -44,6 +46,11 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument("--lags", nargs="+", type=int, default=DEFAULT_LAGS, help="Lag metrics")
     parser.add_argument("--min-word-count", type=int, default=20, help="Min token count for polarization")
+    parser.add_argument(
+        "--allow-placeholder-inputs",
+        action="store_true",
+        help="Allow synthetic/demo transcript or control inputs instead of publication-grade corpora",
+    )
     parser.add_argument(
         "--csv-out",
         default="artifacts/control_family_benchmark.csv",
@@ -231,6 +238,12 @@ def class_effect_sizes(voynich_row: dict, control_rows: list[dict], lags: list[i
 def main() -> int:
     args = parse_args()
 
+    ensure_publication_inputs(
+        voynich_path=args.voynich,
+        manifest_path=args.manifest,
+        allow_placeholder_inputs=args.allow_placeholder_inputs,
+    )
+
     manifest_rows = load_manifest(args.manifest)
 
     voynich_metrics = compute_metrics(args.voynich, True, args.lags, args.min_word_count)
@@ -273,7 +286,11 @@ def main() -> int:
     # Output tabular summary CSV
     os.makedirs(os.path.dirname(args.csv_out), exist_ok=True)
     summary_rows = [voynich_row] + controls
-    fieldnames = list(summary_rows[0].keys())
+    fieldnames: list[str] = []
+    for row in summary_rows:
+        for key in row.keys():
+            if key not in fieldnames:
+                fieldnames.append(key)
     with open(args.csv_out, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=fieldnames)
         w.writeheader()

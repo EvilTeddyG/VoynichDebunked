@@ -21,6 +21,8 @@ import re
 from collections import Counter
 from statistics import mean
 
+from corpus_provenance import ensure_publication_inputs
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Preprocessing sensitivity matrix for periodicity targets")
@@ -29,6 +31,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-char-lag", type=int, default=60, help="Maximum lag")
     parser.add_argument("--permutations", type=int, default=300, help="Null permutations")
     parser.add_argument("--seed", type=int, default=42, help="RNG seed")
+    parser.add_argument(
+        "--allow-placeholder-inputs",
+        action="store_true",
+        help="Allow synthetic/demo transcript inputs instead of publication-grade corpora",
+    )
     parser.add_argument("--csv-out", default="artifacts/preprocessing_sensitivity.csv", help="Output CSV")
     parser.add_argument("--json-out", default="artifacts/preprocessing_sensitivity.json", help="Output JSON")
     return parser.parse_args()
@@ -191,6 +198,11 @@ def summarize_dispersion(variants: dict[str, dict], target_lags: list[int]) -> d
 def main() -> int:
     args = parse_args()
     random.seed(args.seed)
+
+    ensure_publication_inputs(
+        voynich_path=args.input,
+        allow_placeholder_inputs=args.allow_placeholder_inputs,
+    )
 
     lines = load_voynich_lines(args.input)
     if not lines:

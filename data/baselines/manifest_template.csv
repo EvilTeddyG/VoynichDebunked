@@ -1,7 +1,7 @@
 label,path,family,notes
-liturgy_sample,liturgy_sample.txt,liturgical_repetition,Repository-derived placeholder control
-recipe_sample,recipe_sample.txt,medical_recipe,Repository-derived placeholder control
-alchemical_sample,alchemical_sample.txt,alchemical_notation,Repository-derived placeholder control
-glossolalia_sample,glossolalia_sample.txt,glossolalia_control,Repository-derived placeholder control
-pseudo_script_sample,pseudo_script_sample.txt,ornamental_pseudo_script,Repository-derived placeholder control
-mnemonic_sample,mnemonic_sample.txt,mnemonic_notation,Repository-derived placeholder control
+liturgy_sample,liturgy_sample.txt,liturgical_repetition,External text: Book of Common Prayer (Project Gutenberg 29622) fetched 2026-05-17
+recipe_sample,recipe_sample.txt,medical_recipe,External text: Forme of Cury (Project Gutenberg 8102) fetched 2026-05-17
+alchemical_sample,alchemical_sample.txt,alchemical_notation,External text: Alchemy Ancient and Modern (Project Gutenberg 43240) fetched 2026-05-17
+glossolalia_sample,glossolalia_sample.txt,glossolalia_control,External text: From India to the Planet Mars (Project Gutenberg 63092) fetched 2026-05-17
+pseudo_script_sample,pseudo_script_sample.txt,ornamental_pseudo_script,External text: Nonsense Books (Project Gutenberg 13650) fetched 2026-05-17
+mnemonic_sample,mnemonic_sample.txt,mnemonic_notation,External text: Assimilative Memory (Project Gutenberg 25354) fetched 2026-05-17

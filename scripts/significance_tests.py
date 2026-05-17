@@ -21,6 +21,8 @@ import re
 from collections import Counter, defaultdict
 from statistics import mean
 
+from corpus_provenance import ensure_publication_inputs
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Run bootstrap and permutation significance tests")
@@ -31,6 +33,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--bootstrap", type=int, default=300, help="Bootstrap replicates")
     parser.add_argument("--permutations", type=int, default=300, help="Permutation replicates")
     parser.add_argument("--seed", type=int, default=42, help="RNG seed")
+    parser.add_argument(
+        "--allow-placeholder-inputs",
+        action="store_true",
+        help="Allow synthetic/demo transcript inputs instead of publication-grade corpora",
+    )
     parser.add_argument("--json-out", default=None, help="Optional JSON output path")
     return parser.parse_args()
 
@@ -122,6 +129,11 @@ def stddev(vals: list[float]) -> float:
 def main() -> int:
     args = parse_args()
     random.seed(args.seed)
+
+    ensure_publication_inputs(
+        voynich_path=args.input,
+        allow_placeholder_inputs=args.allow_placeholder_inputs,
+    )
 
     words, chars = load_words_and_chars(args.input)
     if not words or not chars:
