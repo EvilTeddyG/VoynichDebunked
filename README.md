@@ -111,6 +111,10 @@ python periodicity_robustness.py --input data/takahashi_eva.txt --target-word-di
 python section_lag_spectrum_compare.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --max-lag 60 --target-lags 5 6 12 13 --permutations 200 --min-section-chars 3000 --csv-out artifacts/section_lag_spectrum_compare.csv --json-out artifacts/section_lag_spectrum_compare.json
 python plot_section_spectra.py --csv artifacts/section_lag_spectrum_compare.csv --out artifacts/plots/section_spectra_grid.png --target-lags 5 6 12 13
 
+# Preprocessing sensitivity matrix (assumption drift across normalization variants)
+python preprocessing_sensitivity.py --input data/takahashi_eva.txt --target-lags 5 6 12 13 --max-char-lag 60 --permutations 300 --csv-out artifacts/preprocessing_sensitivity.csv --json-out artifacts/preprocessing_sensitivity.json
+python plot_preprocessing_sensitivity.py --csv artifacts/preprocessing_sensitivity.csv --out artifacts/plots/preprocessing_sensitivity_heatmap.png
+
 # Reviewer-facing snapshot of this full output terrain (including ambiguity/failure zones)
 # see: periodicity_empirical_results.md
 ```
@@ -187,6 +191,8 @@ lake build
 *   [`periodicity_robustness.py`](periodicity_robustness.py) — Tokenization-variant periodicity audit with permutation nulls, z-scores, and false-positive calibration for lag/spacing peaks.
 *   [`section_lag_spectrum_compare.py`](section_lag_spectrum_compare.py) — Section-stratified lag-spectrum export for manuscript-level stability checks.
 *   [`plot_section_spectra.py`](plot_section_spectra.py) — Grid visualization of section-level spectra with null envelopes and target-lag markers.
+*   [`preprocessing_sensitivity.py`](preprocessing_sensitivity.py) — Variant matrix quantifying target-lag drift across tokenization/normalization assumptions.
+*   [`plot_preprocessing_sensitivity.py`](plot_preprocessing_sensitivity.py) — Heatmap visualization of preprocessing sensitivity for z-scores and p-values.
 *   [`periodicity_empirical_results.md`](periodicity_empirical_results.md) — Current empirical periodicity output snapshot with explicit ambiguity, secondary peaks, and weak-zone reporting.
 *   [`data/baselines/manifest_template.csv`](data/baselines/manifest_template.csv) — Template manifest for comparison corpora grouped by historical control family.
 *   [`synthetic_voynich_manuscript.txt`](synthetic_voynich_manuscript.txt) — High-fidelity synthetic mockup manuscript generated using our physical template parameters.

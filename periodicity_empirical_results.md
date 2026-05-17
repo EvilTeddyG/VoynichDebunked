@@ -19,6 +19,8 @@ Primary numeric outputs:
 - [artifacts/periodicity_robustness.json](artifacts/periodicity_robustness.json)
 - [artifacts/section_lag_spectrum_compare.csv](artifacts/section_lag_spectrum_compare.csv)
 - [artifacts/section_lag_spectrum_compare.json](artifacts/section_lag_spectrum_compare.json)
+- [artifacts/preprocessing_sensitivity.csv](artifacts/preprocessing_sensitivity.csv)
+- [artifacts/preprocessing_sensitivity.json](artifacts/preprocessing_sensitivity.json)
 
 Visual outputs:
 - [artifacts/plots/lag_spectra_comparative.png](artifacts/plots/lag_spectra_comparative.png)
@@ -29,6 +31,7 @@ Visual outputs:
 - [artifacts/plots/voynich_null_hist_lag12.png](artifacts/plots/voynich_null_hist_lag12.png)
 - [artifacts/plots/voynich_null_hist_lag13.png](artifacts/plots/voynich_null_hist_lag13.png)
 - [artifacts/plots/section_spectra_grid.png](artifacts/plots/section_spectra_grid.png)
+- [artifacts/plots/preprocessing_sensitivity_heatmap.png](artifacts/plots/preprocessing_sensitivity_heatmap.png)
 
 ## Lag-Spectrum Results (Voynich Record in Current Run)
 
@@ -72,6 +75,26 @@ Interpretation for section-level evidence in this run:
 - The section-level panel does not support lag 13 as a dominant feature.
 - Lag 5 remains elevated in the retained section.
 - Because all retained data are under synthetic `SIM` tags in this run, this is a pipeline-stability demonstration rather than historical-section inference.
+
+## Preprocessing Sensitivity (Assumption Drift)
+
+Source: [artifacts/preprocessing_sensitivity.json](artifacts/preprocessing_sensitivity.json)
+
+Drift envelope by target lag across normalization variants:
+
+| Lag | z-range | p-value range | Rank range |
+|---|---:|---:|---:|
+| 5  | 6.6679 | [0.00332, 0.85714] | [2, 40] |
+| 6  | 2.7841 | [0.77076, 1.00000] | [41, 56] |
+| 12 | 3.7894 | [0.05316, 0.99003] | [9, 53] |
+| 13 | 3.4748 | [0.10299, 0.99336] | [9, 54] |
+
+Interpretation:
+- Lag 5 is highly sensitive to preprocessing assumptions: strongly elevated in three variants but weak/negative in one (`alpha_min_len_2`).
+- Lag 6 remains consistently unsupported across variants.
+- Lags 12 and 13 are unstable across preprocessing choices and do not present robust dominant behavior in this run.
+
+This panel is intentionally included to expose model fragility zones where conclusions can reverse under plausible preprocessing choices.
 
 ## Tokenization Robustness (Ambiguity and Failure Exposure)
 
