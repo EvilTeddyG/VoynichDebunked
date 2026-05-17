@@ -88,6 +88,9 @@ python cross_validate_markov.py --input data/takahashi_eva.txt --holdout-frac 0.
 
 # Compare Voynich metrics against pseudo-script / medieval control corpora
 python baseline_benchmark.py --voynich data/takahashi_eva.txt --corpora-dir data/baselines --csv-out artifacts/baseline_benchmark.csv --json-out artifacts/baseline_benchmark.json
+
+# Stress-test periodicity claims across tokenization variants and shuffled nulls
+python periodicity_robustness.py --input data/takahashi_eva.txt --target-word-distance 13 --target-char-lags 5 6 --permutations 400 --json-out artifacts/periodicity_robustness.json
 ```
 
 ---
@@ -151,6 +154,7 @@ lake build
 *   [`significance_tests.py`](significance_tests.py) — Bootstrap/permutation tests for entropy, distance peaks, and lag peaks under shuffled null models.
 *   [`cross_validate_markov.py`](cross_validate_markov.py) — Repeated hold-out folio cross-validation comparing bigram vs unigram predictive fit with interval summaries.
 *   [`baseline_benchmark.py`](baseline_benchmark.py) — Comparative metric panel runner for external medieval/pseudo-script control corpora.
+*   [`periodicity_robustness.py`](periodicity_robustness.py) — Tokenization-variant periodicity audit with permutation nulls, z-scores, and false-positive calibration for lag/spacing peaks.
 *   [`synthetic_voynich_manuscript.txt`](synthetic_voynich_manuscript.txt) — High-fidelity synthetic mockup manuscript generated using our physical template parameters.
 *   [`comparison_audit.md`](comparison_audit.md) — Side-by-side line visual alignment and quantitative benchmark comparison.
 *   [`voynich_scientific_proof.md`](voynich_scientific_proof.md) — Quantitative Markov-style model analysis focused on entropy and line effects.
