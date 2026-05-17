@@ -4,6 +4,37 @@
 > All claims made in this repository are traceable to one or more of the sources listed here.
 > Citations follow Chicago (17th ed.) author–date style. BibTeX entries are provided for the principal sources.
 
+### Numbered Citation Index (Used Inline Across Papers)
+
+Use these bracketed numbers in all research documents (example: `[4][9]`).
+
+1. Beinecke MS 408 (Yale Beinecke Library facsimile and catalog record)
+2. Hodgins (University of Arizona AMS radiocarbon report; vellum dated 1404-1438)
+3. Takahashi EVA transcription (via Voynich.nu / VIB)
+4. Shannon (1948), "A Mathematical Theory of Communication"
+5. Shannon (1951), "Prediction and Entropy of Printed English"
+6. Cover and Thomas (2006), *Elements of Information Theory*
+7. D'Imperio (1978), *The Voynich Manuscript: An Elegant Enigma*
+8. Currier (1976), statistical findings (A/B language split)
+9. Rugg (2004), *Scientific American* Cardan-grille generation model
+10. Schinner (2007), hoax-hypothesis statistical evidence
+11. Landini (2001), spectral/autocorrelation evidence
+12. Tiltman (1968), NSA-era cryptanalytic assessment
+13. Davis (2020), digital paleography and five scribal hands
+14. Zandbergen (Voynich.nu), provenance/transcript reference corpus
+15. Guzy (2022), Rudolf II book-transaction evidence
+16. Hurych (2007), Mnishovsky context
+17. Kahn (1967), cryptographic historical context
+18. Brumbaugh (1978), forgery-for-Rudolf hypothesis
+19. Pelling (2006), Filarete candidacy and historical synthesis
+20. Sparavigna (2013), Giovanni Fontana analysis
+21. Neal (n.d.), Fontana cipher manuscript comparison
+22. De Hamel (1992), medieval manuscript production practice
+23. Shailor (1991), scribal tools and workshop process
+24. Fontana, *Bellicorum Instrumentorum Liber* (Cod.icon. 242)
+25. Fontana, *Secretum de Thesauro* (BnF NAL 635)
+26. Long (2001), secrecy/patronage in technical manuscript culture
+
 ---
 
 ## Part I — Primary Sources

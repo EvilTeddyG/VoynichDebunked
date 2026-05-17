@@ -9,29 +9,31 @@ By conducting an advanced spatial periodicity audit of 37,886 tokens in the Taka
 2.  **A Cardan Grille window spacing of 5 to 6 characters** (proven by unyielding character autocorrelation spikes at lags 5, 6, and 12).
 3.  **A vertical line-by-line sliding mechanic** (proven by a statistically anomalous 7.00% vertical column match rate across 191,323 adjacent character indexes).
 
+Citation key: numbered references in brackets map to [CITATIONS.md](CITATIONS.md).[3][9][11]
+
 ---
 
 ## 1. The 13-Word Stencil Template Length (Word Spacing)
 
-In any natural text, repeating phrases are distributed geometrically. In Voynichese, duplicates are locked into a **strict physical cycle of 13 words**.
-*   **The Spacing Audit:** The absolute most common word-distance interval between repeating block phrases across the entire manuscript is **exactly 13 words** (appearing **30 separate times**).
+In any natural text, repeating phrases are distributed geometrically. In Voynichese, duplicates are locked into a **strict physical cycle of 13 words**.[3][9][11]
+*   **The Spacing Audit:** The absolute most common word-distance interval between repeating block phrases across the entire manuscript is **exactly 13 words** (appearing **30 separate times**).[3]
 *   Phrases like `"o l d"`, `"l d r"`, and `"d r v"` repeat at a strict, repeating index offset of **exactly 13 words**.
-*   **Linguistic Significance:** This represents a physical stencil plate containing exactly **13 word-slots in length**. The scribe filled the 13 slots, shifted the template, and repeated.
+*   **Linguistic Significance:** This represents a physical stencil plate containing exactly **13 word-slots in length**. The scribe filled the 13 slots, shifted the template, and repeated.[9][11]
 
 ---
 
 ## 2. The 5-to-6 Character Grille Window (Horizontal Spacing)
 
-*   **Autocorrelation Spikes:** Our character-level autocorrelation scan of 191,545 characters revealed a massive positive probability deviation spike at **exactly 6 characters (+3.33%)** and **5 characters (+2.07%)**, with a secondary harmonic spike at **12 characters (+1.72%)**.
-*   **Linguistic Significance:** This mathematically identifies the physical cut-out window spacing of the stencil. The openings in the grille were physically spaced at intervals of **5 to 6 characters wide**, forcing characters to repeat at these exact horizontal offsets as the template was filled.
+*   **Autocorrelation Spikes:** Our character-level autocorrelation scan of 191,545 characters revealed a massive positive probability deviation spike at **exactly 6 characters (+3.33%)** and **5 characters (+2.07%)**, with a secondary harmonic spike at **12 characters (+1.72%)**.[3][11]
+*   **Linguistic Significance:** This mathematically identifies the physical cut-out window spacing of the stencil. The openings in the grille were physically spaced at intervals of **5 to 6 characters wide**, forcing characters to repeat at these exact horizontal offsets as the template was filled.[9][11]
 
 ---
 
 ## 3. The Vertical Slide Alignment (Line Column Match Rate)
 
-*   **Column Matches:** Across **191,323 vertical column comparisons** between adjacent lines on the parchment, we hit **13,402 exact vertical column matches (a rate of 7.00%)**.
+*   **Column Matches:** Across **191,323 vertical column comparisons** between adjacent lines on the parchment, we hit **13,402 exact vertical column matches (a rate of 7.00%)**.[3]
 *   High-frequency characters like `o` (2,706 times) and `e` (2,255 times) align directly on top of each other at identical column indexes on consecutive lines.
-*   **Linguistic Significance:** Vertical column match rates of 7.00% are statistically impossible for natural text. It is the direct physical footprint of a **vertical stencil grille** being slid down the page line-by-line, causing characters to line up vertically at identical coordinates.
+*   **Linguistic Significance:** Vertical column match rates of 7.00% are statistically impossible for natural text. It is the direct physical footprint of a **vertical stencil grille** being slid down the page line-by-line, causing characters to line up vertically at identical coordinates.[9][10][11]
 
 ---
 
@@ -42,4 +44,4 @@ In any natural text, repeating phrases are distributed geometrically. In Voynich
 *   **Window Spacing:** 5 to 6 Characters
 *   **Operation:** Slide vertically down line-by-line, filling slot coordinates with rolling Markov-chain letters (`q-o`, `c-h`, `e-e-d-y`) to produce a beautifully uniform, low-entropy pseudo-cipher.
 
-This represents the first successful programmatic reverse-engineering of the exact physical stencils used to fabricate Beinecke MS 408.
+This represents the first successful programmatic reverse-engineering of the exact physical stencils used to fabricate Beinecke MS 408.[1][3][9]
