@@ -1,8 +1,8 @@
 # 🔬 Voynich Debunked: The Mechanical Automaton Proof
 ### *Empirical Cryptanalytic and Physical Reverse-Engineering of Beinecke MS 408*
 
-[![GitHub license](https://img.shields.io/github/license/EvilTeddyG/VoynichDebunked)](https://github.com/EvilTeddyG/VoynichDebunked/blob/main/LICENSE)
-[![GitHub stars](https://img.shields.io/github/stars/EvilTeddyG/VoynichDebunked)](https://github.com/EvilTeddyG/VoynichDebunked/stargazers)
+[![GitHub license](https://img.shields.io/github/license/EvilTeddyG/Voynich-Debunked)](https://github.com/EvilTeddyG/Voynich-Debunked/blob/main/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/EvilTeddyG/Voynich-Debunked)](https://github.com/EvilTeddyG/Voynich-Debunked/stargazers)
 
 This repository contains the mathematical, programmatic, and historical proof that the **Voynich Manuscript (Beinecke MS 408)** is not an enciphered natural language shorthand, but a **pseudo-linguistic text physically generated using 15th-century scriptorium layout templates (*patrons*).**
 
@@ -47,8 +47,8 @@ To verify the mathematical and spatial anomalies independently against the Takah
 
 ```bash
 # Clone the repository
-git clone https://github.com/EvilTeddyG/VoynichDebunked.git
-cd VoynichDebunked
+git clone https://github.com/EvilTeddyG/Voynich-Debunked.git
+cd Voynich-Debunked
 
 # Run the raw mathematical profiling & entropy audit
 python cryptanalysis_reset.py
@@ -94,13 +94,13 @@ lake build
 *   [`voynich_proof.lean`](voynich_proof.lean) — Lean 4 / Mathlib4 formal proof of the Mechanical Automaton Hypothesis.
 *   [`lakefile.lean`](lakefile.lean) — Lake build configuration (Mathlib4 dependency).
 *   [`cryptanalysis_reset.py`](cryptanalysis_reset.py) — Cold mathematical profiling of Takahashi unigram/bigram entropy and line positional margins.
-*   [`stencil_periodicity.py`](file:///d:/Voynich/stencil_periodicity.py) — The spatial periodicity engine extracting the 13-word offsets, 6-character lag spikes, and 7% vertical column alignment rate.
-*   [`voynich_simulator.py`](file:///d:/Voynich/voynich_simulator.py) — The Markov transition automaton that successfully generates a synthetic 37,000-word corpus matching the statistical profile of Beinecke MS 408 to within **0.15 bits**.
-*   [`synthetic_voynich_manuscript.txt`](file:///d:/Voynich/synthetic_voynich_manuscript.txt) — High-fidelity synthetic mockup manuscript generated using our physical template parameters.
-*   [`comparison_audit.md`](file:///d:/Voynich/comparison_audit.md) — Side-by-side line visual alignment and quantitative benchmark comparison (the ultimate smoking gun).
-*   [`voynich_scientific_proof.md`](file:///d:/Voynich/voynich_scientific_proof.md) — The mathematical conditional entropy proof paper.
-*   [`voynich_stencil_proof.md`](file:///d:/Voynich/voynich_stencil_proof.md) — The physical Cardan Grille periodicity proof paper.
-*   [`voynich_historical_precedents.md`](file:///d:/Voynich/voynich_historical_precedents.md) — The historical grounding paper detailing early 15th-century scriptorium *patrons*.
+*   [`stencil_periodicity.py`](stencil_periodicity.py) — The spatial periodicity engine extracting the 13-word offsets, 6-character lag spikes, and 7% vertical column alignment rate.
+*   [`voynich_simulator.py`](voynich_simulator.py) — The Markov transition automaton that successfully generates a synthetic 37,000-word corpus matching the statistical profile of Beinecke MS 408 to within **0.15 bits**.
+*   [`synthetic_voynich_manuscript.txt`](synthetic_voynich_manuscript.txt) — High-fidelity synthetic mockup manuscript generated using our physical template parameters.
+*   [`comparison_audit.md`](comparison_audit.md) — Side-by-side line visual alignment and quantitative benchmark comparison (the ultimate smoking gun).
+*   [`voynich_scientific_proof.md`](voynich_scientific_proof.md) — The mathematical conditional entropy proof paper.
+*   [`voynich_stencil_proof.md`](voynich_stencil_proof.md) — The physical Cardan Grille periodicity proof paper.
+*   [`voynich_historical_precedents.md`](voynich_historical_precedents.md) — The historical grounding paper detailing early 15th-century scriptorium *patrons*.
 *   [`voynich_historical_references.md`](voynich_historical_references.md) — Corroborating historical evidence: documented patron use in the Veneto, Renaissance hoax manuscript sales (Rudolf II, Müller/Kircher), and the Giovanni Fontana network as the strongest production-environment correlate.
 *   [`CITATIONS.md`](CITATIONS.md) — Master bibliography: all primary sources, transcript data, information-theory foundations, cryptanalytic scholarship, historical provenance, codicological context, and the formal proof toolchain. Includes a full BibTeX block.
 
@@ -117,6 +117,6 @@ If you utilize this codebase, data, or scientific papers in your research, compu
   year = {2026},
   publisher = {GitHub},
   journal = {GitHub Repository},
-  howpublished = {\url{https://github.com/EvilTeddyG/VoynichDebunked}}
+  howpublished = {\url{https://github.com/EvilTeddyG/Voynich-Debunked}}
 }
 ```
