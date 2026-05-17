@@ -1,0 +1,113 @@
+{
+  "manifest_version": "1.0",
+  "generated_utc": "2026-05-17T15:26:50Z",
+  "git": {
+    "commit": "600c9ec0808f4cbd0bb71c0cb4ba5f5733bc3294",
+    "branch": "main"
+  },
+  "environment": {
+    "python_version": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+    "python_executable": "D:\\Voynich-Debunked\\.venv\\Scripts\\python.exe",
+    "platform": "win32"
+  },
+  "inputs": [
+    {
+      "path": "data/takahashi_eva.txt",
+      "sha256": "ac2251f6930b99da453497fb27d3d12111880113c6bb90a412ff4f04766f1a52"
+    },
+    {
+      "path": "data/baselines/manifest_template.csv",
+      "sha256": "427f05a92adb12ae60728e7981e987ea521f67f815804d459b6e3ff00ef61d1b"
+    },
+    {
+      "path": "data/baselines/SOURCES.md",
+      "sha256": "4760d233b3f06adaaa5d9cf7958778521fe75722b599ee32966dab34db3d34e9"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "artifacts/lag_spectrum_compare.csv",
+      "sha256": "2f7a5c622ed4617339b20976ed68f252d5c912900b0c72a3c3f7316d0d4b73d3",
+      "bytes": 61291
+    },
+    {
+      "path": "artifacts/lag_spectrum_compare.json",
+      "sha256": "81d6f94f8a5e3c9827cf652a01eeca2e0682b273d06bff6af10b045ee94ec884",
+      "bytes": 3173770
+    },
+    {
+      "path": "artifacts/periodicity_robustness.json",
+      "sha256": "8a467455d2fb3d9a157a05e570113c6852b9897483efa43cea9eadf491bc05e6",
+      "bytes": 7119
+    },
+    {
+      "path": "artifacts/preprocessing_sensitivity.csv",
+      "sha256": "ede4dc3f63bc180f43c96d067dd98f2f716ba3b42534202a46109077f7b52fb8",
+      "bytes": 3434
+    },
+    {
+      "path": "artifacts/preprocessing_sensitivity.json",
+      "sha256": "9ddc173ec4a22a6961924e11b088891915819f8c5e3e59eaf556ec74db86af32",
+      "bytes": 8211
+    },
+    {
+      "path": "artifacts/section_lag_spectrum_compare.csv",
+      "sha256": "52afda3ab041e658c27879752903f2c645180dcd4e43d49aa338d62a494ac528",
+      "bytes": 86571
+    },
+    {
+      "path": "artifacts/section_lag_spectrum_compare.json",
+      "sha256": "67b8ce17c8434eacf9cdeb8282fa2c8017b8abddeddbf72efa317dd1b5bf892c",
+      "bytes": 32852
+    },
+    {
+      "path": "artifacts/section_lag_spectrum_compare_min800.csv",
+      "sha256": "5c11993efdb1a1670b0c17d2e1d7a30e57d8f0883b00a9afb217735f6818d591",
+      "bytes": 658036
+    },
+    {
+      "path": "artifacts/section_lag_spectrum_compare_min800.json",
+      "sha256": "1e4ad89c1e816c546ba8ef32f7a4f3b6594f4736b3692fd822be09ecd2146ebc",
+      "bytes": 257265
+    },
+    {
+      "path": "artifacts/phase_shift_test_min800_v2.json",
+      "sha256": "3cd0ea59e7874c332f70278bb53b9ff31fe68760c4c75789f09302a26c1e644f",
+      "bytes": 3781
+    },
+    {
+      "path": "artifacts/baseline_benchmark.csv",
+      "sha256": "ec199f1c0dc07b6805a462597831081f7c949782eece82fc0695cf8746915dbf",
+      "bytes": 1882
+    },
+    {
+      "path": "artifacts/baseline_benchmark.json",
+      "sha256": "6866547e95ad91010666ff3bb53d013d1bd195aa4ff185ae4bd3902e09ba9807",
+      "bytes": 3524
+    },
+    {
+      "path": "artifacts/control_family_benchmark.csv",
+      "sha256": "0b39ae3ec6714f4f94257c4add1f6bbc3260689ba60f425d373b9a1e3115d139",
+      "bytes": 2283
+    },
+    {
+      "path": "artifacts/control_family_benchmark.json",
+      "sha256": "1120180bbd979861ef537ceff18e446633100a91d09a1641e918f595fe3886b5",
+      "bytes": 15201
+    }
+  ],
+  "canonical_commands": [
+    "python scripts/baseline_benchmark.py --voynich data/takahashi_eva.txt --corpora-dir data/baselines --csv-out artifacts/baseline_benchmark.csv --json-out artifacts/baseline_benchmark.json",
+    "python scripts/control_family_benchmark.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --csv-out artifacts/control_family_benchmark.csv --json-out artifacts/control_family_benchmark.json",
+    "python scripts/lag_spectrum_compare.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --max-lag 60 --target-lags 5 6 12 13 --permutations 200 --store-null-targets --store-null-profiles --csv-out artifacts/lag_spectrum_compare.csv --json-out artifacts/lag_spectrum_compare.json",
+    "python scripts/periodicity_robustness.py --input data/takahashi_eva.txt --target-word-distance 13 --target-char-lags 5 6 --permutations 400 --json-out artifacts/periodicity_robustness.json",
+    "python scripts/preprocessing_sensitivity.py --input data/takahashi_eva.txt --target-lags 5 6 12 13 --max-char-lag 60 --permutations 300 --csv-out artifacts/preprocessing_sensitivity.csv --json-out artifacts/preprocessing_sensitivity.json",
+    "python scripts/section_lag_spectrum_compare.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --max-lag 60 --target-lags 5 6 12 13 --permutations 200 --min-section-chars 3000 --csv-out artifacts/section_lag_spectrum_compare.csv --json-out artifacts/section_lag_spectrum_compare.json",
+    "python scripts/section_lag_spectrum_compare.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --max-lag 60 --target-lags 5 6 12 13 --permutations 80 --min-section-chars 800 --csv-out artifacts/section_lag_spectrum_compare_min800.csv --json-out artifacts/section_lag_spectrum_compare_min800.json",
+    "python -c \"phase-shift analysis script writing artifacts/phase_shift_test_min800_v2.json\""
+  ],
+  "notes": [
+    "Claim-facing scripts enforce provenance checks unless --allow-placeholder-inputs is explicitly passed.",
+    "This manifest freezes current input hashes and artifact hashes for reproducibility."
+  ]
+}
