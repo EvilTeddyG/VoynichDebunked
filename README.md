@@ -161,18 +161,35 @@ Important scope note: the Lean development formalizes **inferential consistency 
 
 ## What Must Be Added For Stronger Claims
 
-The following items are required before escalating from "strong hypothesis package" to stronger exclusionary claims:
+The following items govern escalation from "strong hypothesis package" to stronger exclusionary claims.
+Status labels are intentionally conservative.
 
-1. A committed Takahashi transcript snapshot or deterministic fetch with hash verification. (Partially addressed via `fetch_takahashi.py`.)
-2. Reproducible outputs/logs (versioned run artifacts, seeds, and exact command provenance). (Partially addressed via `--json-out` in analysis scripts.)
-3. Significance testing against shuffled/control corpora and matched null baselines. (Partially addressed via `significance_tests.py`.)
-4. Explicit baseline expansion to medieval manuscript families:
-  scribal abbreviation corpora, liturgical repetition corpora, mnemonic/alchemical texts,
-  medical recipe collections, constrained poetic forms, glossolalia controls,
-  and known pseudo-script traditions.
-5. Cross-validation regime: train on subset folios, evaluate predictive fit on held-out folios. (Scaffold added in `cross_validate_markov.py`.)
-6. Null-model stress tests for the 13-word and 5-6-character peaks under tokenization/transcription variants and anti-selection controls. (Initial permutation test added; robustness suite still pending.)
-7. Preregistered blind-ranking discipline for astronomy: freeze scoring rule, publish full ranked surface, freeze interpretation notes, then unblind.
+1. Input data immutability and provenance tracking. **Status: Partial**
+  - Keep deterministic transcript fetch/hash verification as default.
+  - Freeze exact transcript revision used per major run and record it in outputs/docs.
+2. Full run provenance for reproducibility. **Status: Partial**
+  - Record command lines, seeds, software versions, and commit SHA for each published artifact set.
+  - Ensure every claim-facing figure/table links to its generating artifact.
+3. Null calibration and significance reporting across pipelines. **Status: Partial**
+  - Keep permutation/bootstrap outputs published, not summarized only.
+  - Report effect size + uncertainty + false-positive behavior together.
+4. Baseline family expansion and balancing. **Status: Pending**
+  - Add broader medieval/control families (scribal abbreviations, liturgical repetition, technical recipe texts, constrained poetic forms, pseudo-script traditions).
+  - Maintain family-aware comparisons, not only aggregate baselines.
+5. Cross-validation and out-of-sample checks. **Status: Partial**
+  - Retain holdout evaluation for text models.
+  - Expand to stronger section-level and manuscript-level out-of-sample diagnostics.
+6. Periodicity robustness under adversarial preprocessing. **Status: Partial**
+  - Continue tokenization/transcription sensitivity tests and full lag-surface publication.
+  - Treat unstable components (currently word-lag-13 and char-lag-6) as conditional, not core.
+  - Keep robust components (currently char-lag-5) separated from weaker signals in claims.
+7. Blind astronomy governance and disclosure discipline. **Status: Partial**
+  - Freeze scoring rule and interpretation notes before unblinding.
+  - Publish full ranking surface, near-ties, and false-match calibration.
+  - Preserve separation between template/scaffold runs and measured-folio runs.
+8. Claim-boundary enforcement. **Status: In Force**
+  - Keep process-class and constrained-dependence claims primary.
+  - Keep named-attribution and motive reconstruction explicitly out of scope unless independent multi-modal evidence converges.
 
 Notes on current vulnerability profile:
 1. The entropy argument is the central claim axis.
