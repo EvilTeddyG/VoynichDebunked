@@ -30,6 +30,11 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-lag", type=int, default=60, help="Maximum lag for spectra")
     parser.add_argument("--target-lags", nargs="+", type=int, default=[5, 6, 12, 13], help="Lags to summarize")
     parser.add_argument("--permutations", type=int, default=200, help="Null permutations per corpus")
+    parser.add_argument(
+        "--store-null-targets",
+        action="store_true",
+        help="Store null sample arrays for target lags in JSON (larger file, enables histogram plots)",
+    )
     parser.add_argument("--seed", type=int, default=42, help="RNG seed")
     parser.add_argument("--csv-out", default="artifacts/lag_spectrum_compare.csv", help="Output long CSV")
     parser.add_argument("--json-out", default="artifacts/lag_spectrum_compare.json", help="Output summary JSON")
@@ -151,6 +156,7 @@ def main() -> int:
                 null_by_lag[lag].append(v)
 
         target_stats = {}
+        target_null_samples = {}
         for lag in args.target_lags:
             vals = null_by_lag.get(lag, [])
             vals_sorted = sorted(vals)
@@ -169,6 +175,8 @@ def main() -> int:
                 "z_score": z,
                 "rank": rank_lag(obs, lag),
             }
+            if args.store_null_targets:
+                target_null_samples[str(lag)] = vals
 
         # Long rows for plotting
         for lag in range(1, args.max_lag + 1):
@@ -198,6 +206,7 @@ def main() -> int:
                 "path": c["path"],
                 "char_count": len(chars),
                 "target_lag_stats": target_stats,
+                "target_lag_null_samples": target_null_samples if args.store_null_targets else None,
                 "peak_lag": max(obs, key=lambda k: obs[k]),
                 "peak_value": max(obs.values()) if obs else 0.0,
             }

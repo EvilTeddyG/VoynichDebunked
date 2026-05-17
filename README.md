@@ -93,7 +93,10 @@ python baseline_benchmark.py --voynich data/takahashi_eva.txt --corpora-dir data
 python control_family_benchmark.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --csv-out artifacts/control_family_benchmark.csv --json-out artifacts/control_family_benchmark.json
 
 # Generate null-calibrated lag spectra across Voynich + control families
-python lag_spectrum_compare.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --max-lag 60 --target-lags 5 6 12 13 --permutations 200 --csv-out artifacts/lag_spectrum_compare.csv --json-out artifacts/lag_spectrum_compare.json
+python lag_spectrum_compare.py --voynich data/takahashi_eva.txt --manifest data/baselines/manifest_template.csv --max-lag 60 --target-lags 5 6 12 13 --permutations 200 --store-null-targets --csv-out artifacts/lag_spectrum_compare.csv --json-out artifacts/lag_spectrum_compare.json
+
+# Render spectral visuals and null-distribution histograms (requires matplotlib)
+python plot_lag_spectra.py --csv artifacts/lag_spectrum_compare.csv --json artifacts/lag_spectrum_compare.json --outdir artifacts/plots
 
 # Stress-test periodicity claims across tokenization variants and shuffled nulls
 python periodicity_robustness.py --input data/takahashi_eva.txt --target-word-distance 13 --target-char-lags 5 6 --permutations 400 --json-out artifacts/periodicity_robustness.json
@@ -167,6 +170,7 @@ lake build
 *   [`baseline_benchmark.py`](baseline_benchmark.py) — Comparative metric panel runner for external medieval/pseudo-script control corpora.
 *   [`control_family_benchmark.py`](control_family_benchmark.py) — Labeled control-family benchmark producing class-conditional effect sizes and nearest-control diagnostics.
 *   [`lag_spectrum_compare.py`](lag_spectrum_compare.py) — Null-calibrated lag-spectrum export across Voynich and control families for periodicity scrutiny.
+*   [`plot_lag_spectra.py`](plot_lag_spectra.py) — Comparative spectral plots and target-lag null histograms for reviewer-facing periodicity evidence.
 *   [`periodicity_robustness.py`](periodicity_robustness.py) — Tokenization-variant periodicity audit with permutation nulls, z-scores, and false-positive calibration for lag/spacing peaks.
 *   [`data/baselines/manifest_template.csv`](data/baselines/manifest_template.csv) — Template manifest for comparison corpora grouped by historical control family.
 *   [`synthetic_voynich_manuscript.txt`](synthetic_voynich_manuscript.txt) — High-fidelity synthetic mockup manuscript generated using our physical template parameters.
