@@ -2,9 +2,14 @@
 # Voynich Manuscript: Formal Proof of the Mechanical Automaton Hypothesis
 ## *Beinecke MS 408 — Lean 4 / Mathlib4 Verification*
 
-This file contains the formal mathematical proof that the Voynich Manuscript
-cannot be an enciphered natural language, and is consistent only with a
-low-state Markov automaton driven by a physical stencil (patron) template.
+This file contains a formalization of the logical consequences of the empirical
+measurements used in this repository. It does not prove those measurements from
+first principles; rather, it checks inferential consistency once they are
+accepted as premises.
+
+Under those premises, the development derives incompatibility with a simple
+natural-language-bijective-cipher model and consistency with a low-state,
+stencil-constrained generative account.
 
 ### Three Independent Lines of Evidence
 

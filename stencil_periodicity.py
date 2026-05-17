@@ -6,8 +6,25 @@ Analyzes:
 2. Vertical Character Alignment (measuring line-to-line vertical index correlations).
 3. Spacing Autocorrelation (spikes in character distances pointing to a physical grille size).
 """
-import re, math, sys
+import argparse
+import json
+import re
 from collections import defaultdict, Counter
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Spatial periodicity and alignment audit")
+    parser.add_argument(
+        "--input",
+        default="data/takahashi_eva.txt",
+        help="Path to transcript file (default: data/takahashi_eva.txt)",
+    )
+    parser.add_argument(
+        "--json-out",
+        default=None,
+        help="Optional path to write machine-readable JSON results",
+    )
+    return parser.parse_args()
 
 def analyze_block_duplications(words, min_len=3):
     """
@@ -103,7 +120,8 @@ def analyze_character_autocorrelation(corpus, max_lag=100):
     return autocorr
 
 def main():
-    input_file = 'd:/Voynich/source_repo/analysis/takahashi_original.txt'
+    args = parse_args()
+    input_file = args.input
     
     # Load and clean words
     word_list = []
@@ -172,18 +190,50 @@ def main():
         
     print()
     print("=" * 80)
-    print("SPATIAL VERDICT & MATHEMATICAL CORRELATIONS")
+    print("SPATIAL SUMMARY")
     print("=" * 80)
     
     # Find top lag spikes that point to a physical size
     top_lags = [lag for lag, score in lags[:5]]
-    print(f"1. A strong spatial periodicity is detected at character lags: {top_lags}.")
-    print("   This mathematically maps to a physical stencil/grille width of approx. 5-12 characters")
-    print("   (or exact multiples thereof), where letters are forced to repeat due to stencil cut-out reuse.")
-    print("2. Multi-word phrases like 'daiin' sequences repeat at highly localized intervals.")
-    print("3. The high rate of line-to-line vertical column matches is statistically anomalous")
-    print("   for a natural text, confirming that characters were vertically aligned during transcription.")
+    print(f"1. Strong periodic lags are detected at offsets: {top_lags}.")
+    print("2. Repeating phrase distances and column matches are consistent with layout constraints.")
+    print("3. Formal significance testing against shuffled/null controls is required")
+    print("   before treating any single peak as a definitive physical dimension.")
     print("=" * 80)
+
+    if args.json_out:
+        results = {
+            "input_file": input_file,
+            "word_count": len(word_list),
+            "top_repeated_phrases": [
+                {
+                    "phrase": list(phrase),
+                    "count": count,
+                    "positions": positions,
+                }
+                for phrase, count, positions in repeated_phrases[:100]
+            ],
+            "distance_histogram_top": [
+                {"distance": dist, "frequency": freq}
+                for dist, freq in dist_counts.most_common(50)
+            ],
+            "vertical_alignment": {
+                "total_comparisons": total_comp,
+                "total_matches": total_matches,
+                "match_rate": match_rate,
+                "top_chars": [
+                    {"char": c, "count": n}
+                    for c, n in matches.most_common(20)
+                ],
+            },
+            "autocorrelation_top": [
+                {"lag": lag, "score": score}
+                for lag, score in lags[:60]
+            ],
+        }
+        with open(args.json_out, "w", encoding="utf-8") as f:
+            json.dump(results, f, indent=2)
+        print(f"JSON results written to: {args.json_out}")
 
 if __name__ == '__main__':
     main()

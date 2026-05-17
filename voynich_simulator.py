@@ -6,11 +6,28 @@ to generate a synthetic corpus of 37,000 words.
 Validates the synthetic output against the actual manuscript's conditional entropy
 and word polarization statistics.
 """
-import random, sys, math
+import argparse
+import json
+import random
+import math
 from collections import defaultdict, Counter
 
-# Seed for reproducible clinical audit
-random.seed(42)
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Generate synthetic Voynich-like corpus from a constrained model")
+    parser.add_argument("--seed", type=int, default=42, help="RNG seed (default: 42)")
+    parser.add_argument("--lines", type=int, default=3000, help="Number of synthetic lines (default: 3000)")
+    parser.add_argument(
+        "--output",
+        default="synthetic_voynich_manuscript.txt",
+        help="Path for generated corpus (default: synthetic_voynich_manuscript.txt)",
+    )
+    parser.add_argument(
+        "--json-out",
+        default=None,
+        help="Optional path to write machine-readable JSON summary",
+    )
+    return parser.parse_args()
 
 # Define the Markov automaton state transition probabilities
 # Derived directly from our empirical analysis of the Takahashi transcript
@@ -111,19 +128,22 @@ def calculate_entropy(text):
     return h0, h1
 
 def main():
+    args = parse_args()
+    random.seed(args.seed)
+
     print("=" * 80)
     print("EXECUTING VOYNICH MECHANICAL GENERATOR SIMULATOR")
     print("=" * 80)
-    print("Generating 3,000 synthetic lines (~24,000 words)...")
+    print(f"Generating {args.lines:,} synthetic lines...")
     
-    synthetic_lines = generate_synthetic_corpus()
+    synthetic_lines = generate_synthetic_corpus(num_lines=args.lines)
     synthetic_corpus = "\n".join(synthetic_lines)
     synthetic_words = []
     for line in synthetic_lines:
         synthetic_words.extend(line.split())
         
     # Save simulated text
-    sim_file = 'd:/Voynich/source_repo/analysis/simulated_voynich.txt'
+    sim_file = args.output
     with open(sim_file, 'w', encoding='utf-8') as f:
         f.write(synthetic_corpus)
         
@@ -178,15 +198,39 @@ def main():
         
     print()
     print("=" * 80)
-    print("EMPIRICAL CONCLUSION")
+    print("MODEL INTERPRETATION")
     print("=" * 80)
-    print("We have successfully synthesized a text that is mathematically")
-    print("indistinguishable from the Voynich Manuscript's character transitions")
-    print("and layout polarization constraints. This empirically proves that:")
-    print("1. Voynichese is a low-entropy Markov chain, NOT an enciphered natural language.")
-    print("2. The 'Line Effect' is a mechanical spatial template artifact.")
-    print("3. The codex is a physical early 15th-century visual mockup/hoax.")
+    print("The simulator shows that a constrained low-state process can reproduce")
+    print("key anomaly clusters (entropy and line-position effects) in the same range.")
+    print("This is an existence proof for model plausibility, not exclusive proof")
+    print("against all alternative hypotheses.")
     print("=" * 80)
+
+    if args.json_out:
+        results = {
+            "seed": args.seed,
+            "num_lines": args.lines,
+            "output_file": sim_file,
+            "entropy": {
+                "H0_synthetic": h0_sim,
+                "H1_synthetic": h1_sim,
+                "H0_reference": 3.9534,
+                "H1_reference": 2.3102,
+            },
+            "top_polarization_words": [
+                {
+                    "word": w,
+                    "count": total,
+                    "p_start": p_s,
+                    "p_mid": p_m,
+                    "p_end": p_e,
+                }
+                for w, total, p_s, p_m, p_e in polarization[:50]
+            ],
+        }
+        with open(args.json_out, "w", encoding="utf-8") as f:
+            json.dump(results, f, indent=2)
+        print(f"JSON results written to: {args.json_out}")
 
 if __name__ == '__main__':
     main()

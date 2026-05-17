@@ -7,8 +7,26 @@ Measures:
 2. The Line-Effect Correlation (verifying if word positions are bound by line layout).
 3. The Phonotactic Finite-State Automaton (Markov chain generation properties).
 """
-import re, math, sys
+import argparse
+import json
+import re
+import math
 from collections import defaultdict, Counter
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="Entropy and line-effect audit for a Takahashi/EVA transcript")
+    parser.add_argument(
+        "--input",
+        default="data/takahashi_eva.txt",
+        help="Path to transcript file (default: data/takahashi_eva.txt)",
+    )
+    parser.add_argument(
+        "--json-out",
+        default=None,
+        help="Optional path to write machine-readable JSON results",
+    )
+    return parser.parse_args()
 
 def calculate_entropy(text):
     """
@@ -94,7 +112,8 @@ def analyze_line_effect(input_file):
     return polarization_results
 
 def main():
-    input_file = 'd:/Voynich/source_repo/analysis/takahashi_original.txt'
+    args = parse_args()
+    input_file = args.input
     
     # 1. Load entire cleaned corpus
     corpus = ""
@@ -131,11 +150,10 @@ def main():
     print("  - Middle English:          H0 = ~4.4 bits, H1 = ~3.3 bits")
     print("  - Voynichese (Actual):     H0 = ~3.8 bits, H1 = ~2.1 bits  <-- EXTREMELY LOW")
     print()
-    print("Scientific Significance:")
-    print("  The conditional entropy (2.1 bits) is mathematically too low for a natural language.")
-    print("  It indicates that character transitions are highly predictable (e.g. if character C1")
-    print("  is written, there is almost zero choice for what character C2 must follow).")
-    print("  This points heavily to a rigid mechanical generation process or a template code.")
+    print("Interpretation:")
+    print("  Low conditional entropy indicates highly predictable transitions.")
+    print("  This is consistent with a constrained generation process and should be")
+    print("  compared against expanded medieval/control baselines before stronger claims.")
     print()
     
     # 3. Analyze Line Effect
@@ -148,11 +166,10 @@ def main():
         print(f"{w:<12} | {total:<11} | {p_s*100:<13.1f}% | {p_m*100:<13.1f}% | {p_e*100:<10.1f}%")
         
     print()
-    print("Scientific Significance:")
-    print("  In any real language, a word's probability of appearing at the physical margin of")
-    print("  a parchment line is uniform. Here, words like 'ykey' or 'dal' are highly polarized:")
-    print("  they are structurally bound to specific slots on the visual line layout.")
-    print("  This is paleographical proof that the text was copied using physical line-bound rules.")
+    print("Interpretation:")
+    print("  High positional polarization is consistent with layout constraints.")
+    print("  Additional robustness checks should include folio partitions, Currier splits,")
+    print("  and normalization variants.")
     print()
     
     # 4. Markov Chain Transition State Automaton (Phonotactic Constraints)
@@ -173,16 +190,42 @@ def main():
         print()
         
     print("=" * 80)
-    print("CLINICAL DIAGNOSIS")
+    print("SUMMARY")
     print("=" * 80)
-    print("1. Voynichese behaves like a high-constraint, low-state Markov chain.")
-    print("2. It lacks the internal syntactic and lexical freedom of a natural language shorthand.")
-    print("3. The text is mathematically bound to visual line layouts (the Line Effect).")
-    print("4. This proves that ANY global translation model is a narrative projection.")
-    print("5. The manuscript was physically constructed via a template-rolling mechanical grid")
-    print("   (such as a Cardan Grille variant) or a pseudo-linguistic generator designed to")
-    print("   produce realistic-looking, low-entropy decorative filler.")
+    print("1. The corpus shows low conditional entropy and strong transition constraints.")
+    print("2. The corpus shows measurable line-position effects.")
+    print("3. These signals motivate testing constrained generative models against")
+    print("   translation/cipher alternatives with formal null-model statistics.")
     print("=" * 80)
+
+    if args.json_out:
+        results = {
+            "input_file": input_file,
+            "token_count": len(word_list),
+            "char_count": len([c for c in corpus if c.isalpha()]),
+            "entropy": {"H0": h0, "H1": h1},
+            "top_positional_polarization": [
+                {
+                    "word": w,
+                    "count": total,
+                    "p_start": p_s,
+                    "p_mid": p_m,
+                    "p_end": p_e,
+                    "max_p": max_p,
+                }
+                for (w, total, p_s, p_m, p_e, max_p) in polarization[:50]
+            ],
+            "top_transitions": {
+                char: [
+                    {"next": next_char, "count": count, "pct": (count / sum(transitions[char].values())) * 100 if sum(transitions[char].values()) else 0}
+                    for next_char, count in transitions[char].most_common(10)
+                ]
+                for char in ["q", "o", "c", "e"]
+            },
+        }
+        with open(args.json_out, "w", encoding="utf-8") as f:
+            json.dump(results, f, indent=2)
+        print(f"JSON results written to: {args.json_out}")
 
 if __name__ == '__main__':
     main()
