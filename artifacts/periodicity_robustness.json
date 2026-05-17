@@ -1,5 +1,5 @@
 {
-  "input_file": "D:/Voynich-Debunked/data/takahashi_eva.txt",
+  "input_file": "data/takahashi_eva.txt",
   "seed": 42,
   "permutations": 400,
   "target_word_distance": 13,
